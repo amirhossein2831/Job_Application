@@ -22,7 +22,7 @@
                 </label>
                 <x-errors.field-message name="password"/>
             </div>
-
+            <p>you don't have account? &nbsp;<a href="/register/seeker">register</a></p>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </div>

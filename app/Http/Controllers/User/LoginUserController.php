@@ -18,5 +18,6 @@ class LoginUserController extends Controller
         if (Auth::attempt($credential)) {
             return redirect()->intended('/dashboard');
         }
+        return "wrong input";
     }
 }

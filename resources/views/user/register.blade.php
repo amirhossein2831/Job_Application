@@ -51,7 +51,7 @@
                        id="emailInput" placeholder="Amir@gmail.com">
                 <x-errors.field-message name="email"/>
             </div>
-
+            <p>you don't have account? &nbsp;<a href="/login">login</a></p>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </div>
