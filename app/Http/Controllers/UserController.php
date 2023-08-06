@@ -15,6 +15,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-        return User::create($request->all());
+        User::create($request->all());
+        return redirect('/');
     }
 }
