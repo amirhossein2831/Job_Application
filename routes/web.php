@@ -24,4 +24,4 @@ Route::post('/register/seeker', [RegisterUserController::class, 'store']);
 Route::get('/dashboard',[DashBoarController::class,'index']);
 Route::get('/login', [LoginUserController::class, 'index']);
 Route::post('/login', [LoginUserController::class, 'login']);
-Route::get('/logout',[LogoutController::class,'logout']);
+Route::post('/logout',[LogoutController::class,'logout']);

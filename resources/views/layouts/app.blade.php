@@ -35,9 +35,10 @@
                 @endif
                 @if(Auth()->check())
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout">Log Out</a>
+                        <a class="nav-link" id="logout" >Log Out</a>
                     </li>
                 @endif
+                <form action="/logout" id="logoutForm" method="post">@csrf</form>
 
             </ul>
         </div>
@@ -55,5 +56,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
         crossorigin="anonymous"></script>
+<script>
+    const logout = document.querySelector('#logout');
+    const logoutForm = document.querySelector('#logoutForm');
+    logout.addEventListener('click', evt => {
+        logoutForm.submit();
+    })
+</script>
 </body>
 </html>
