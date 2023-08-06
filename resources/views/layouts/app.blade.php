@@ -6,12 +6,13 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('/resources/css/dashboard-item.css')}}">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="{{asset('image/logo/FJLogo.png')}}" alt="Logo" width="30"
+            <img src="{{asset('resources/image/logo/FJLogo.png')}}" alt="Logo" width="30"
                  style="margin-top: -5px;border-radius: 5px" height="24" class="d-inline-block  align-text-top">
             <span style="margin-right: 10px">Find Job</span>
         </a>
@@ -56,12 +57,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
         crossorigin="anonymous"></script>
-<script>
-    const logout = document.querySelector('#logout');
-    const logoutForm = document.querySelector('#logoutForm');
-    logout.addEventListener('click', evt => {
-        logoutForm.submit();
-    })
-</script>
+<script src="{{asset('resources/js/SubmitForm.js')}}"></script>
 </body>
 </html>
