@@ -14,9 +14,7 @@
             <x-field field-name="password" type="password" label="Password" container-class="col-md-6"/>
 
             <p>you don't have account? &nbsp;<a href="/register/seeker">register</a></p>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
+            <x-button.submit-button container-class="col-12" label="Login"/>
         </form>
     </div>
 @endsection

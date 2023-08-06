@@ -25,9 +25,8 @@
                 <x-field field-name="email" type="email" label="Email" container-class="mb-3">Amir@gmail.com</x-field>
 
             <p>you don't have account? &nbsp;<a href="/login">login</a></p>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
+
+            <x-button.submit-button container-class="col-12" label="Sign in"/>
         </form>
     </div>
 @endsection
