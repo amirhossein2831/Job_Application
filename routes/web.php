@@ -4,6 +4,7 @@ use App\Http\Controllers\DashBoarController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\RegisterUserController;
+use App\Http\Middleware\DasboardMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,7 @@ Route::get('/', function () {
 });
 Route::get('/register/seeker', [RegisterUserController::class, 'index']);
 Route::post('/register/seeker', [RegisterUserController::class, 'store']);
-Route::get('/dashboard',[DashBoarController::class,'index']);
-Route::get('/login', [LoginUserController::class, 'index']);
+Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('auth');
+Route::get('/login', [LoginUserController::class, 'index'])->name('login');
 Route::post('/login', [LoginUserController::class, 'login']);
 Route::post('/logout',[LogoutController::class,'logout']);
