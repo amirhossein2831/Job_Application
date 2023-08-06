@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\user\RegisterRequest;
 use App\Models\User;
 
 class RegisterUserController extends Controller
@@ -13,9 +13,9 @@ class RegisterUserController extends Controller
         return view('user.register');
     }
 
-    public function store(UserRequest $request)
+    public function store(RegisterRequest $request)
     {
         User::create($request->all());
-        return redirect('/');
+        return redirect('/login');
     }
 }
