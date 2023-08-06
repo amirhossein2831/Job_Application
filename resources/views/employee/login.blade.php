@@ -6,7 +6,7 @@
     </div>
     <div class="container"
          style="display: flex;justify-content: center;align-items: center;width: 1000px;height: 450px;margin-top: 20px;border-radius: 10px;border: 1px solid black">
-        <form class="row g-3" action="/login" method="post">
+        <form class="row g-3" action="/login/employee" method="post">
             @csrf
             <div class="mb-3">
                 <label for="emailInput" class="form-label">Email</label>
@@ -22,7 +22,7 @@
                 </label>
                 <x-errors.field-message name="password"/>
             </div>
-            <p>you don't have account? &nbsp;<a href="/register/seeker">register</a></p>
+            <p>you don't have account? &nbsp;<a href="/register/employee">register</a></p>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </div>
