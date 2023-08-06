@@ -8,7 +8,8 @@
         </div>
     </div>
     <div class="container" style="display: flex;justify-content: center;align-items: center;width: 1000px;margin-top: 20px;height: 400px;border-radius: 10px;border: 1px solid black">
-        <form class="row g-3">
+        <form class="row g-3" action="/register/seeker" method="post">
+            @csrf
             <div class="col-md-6">
                 <label class="form-label">FirstName
                     <input type="text" class="form-control" style="width: 480px">
