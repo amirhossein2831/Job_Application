@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/register/seeker', [UserController::class, 'index']);
+Route::get('/login', [UserController::class, 'login']);
 Route::post('/register/seeker', [UserController::class, 'store']);

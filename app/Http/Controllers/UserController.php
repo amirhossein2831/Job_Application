@@ -18,4 +18,9 @@ class UserController extends Controller
         User::create($request->all());
         return redirect('/');
     }
+
+    public function login()
+    {
+        return view('user.login');
+    }
 }
