@@ -29,7 +29,7 @@
                     <a class="nav-link" href="#">Employer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Job Seeker</a>
+                    <a class="nav-link" href="/register/seeker">Job Seeker</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/login" >Login</a>

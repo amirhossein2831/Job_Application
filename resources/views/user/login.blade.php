@@ -6,7 +6,7 @@
     </div>
     <div class="container"
          style="display: flex;justify-content: center;align-items: center;width: 1000px;height: 450px;margin-top: 20px;border-radius: 10px;border: 1px solid black">
-        <form class="row g-3" action="/register/seeker" method="post">
+        <form class="row g-3" action="/login" method="post">
             @csrf
             <div class="mb-3">
                 <label for="emailInput" class="form-label">Email</label>
