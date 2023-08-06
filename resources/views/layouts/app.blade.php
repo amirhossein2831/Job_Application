@@ -25,15 +25,20 @@
                 <li class="nav-item">
                     <a class="nav-link " aria-current="page" href="/">Home</a>         {{-- need two handle active page--}}
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Employer</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register/seeker">Job Seeker</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login" >Login</a>
-                </li>
+                @if(!Auth()->check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register/seeker">Employee Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login" >User Login</a>
+                    </li>
+                @endif
+                @if(Auth()->check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Log Out</a>
+                    </li>
+                @endif
+
             </ul>
         </div>
     </div>
