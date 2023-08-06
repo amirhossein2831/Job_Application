@@ -13,44 +13,17 @@
         <form class="row g-3" action="/register/seeker" method="post">
             @csrf
             <input type="hidden" name="user_type" value="seeker">
-            <div class="col-md-6">
-                <label class="form-label">FirstName
-                    <input type="text" name="firstName" class="form-control @error('firstName') is-invalid @enderror"
-                           style="width: 480px">
-                </label>
-                <x-errors.field-message name="firstName"/>
-            </div>
 
-            <div class="col-md-6">
-                <label class="form-label">Last Name
-                    <input type="text" name="lastName" class="form-control @error('lastName') is-invalid @enderror"
-                           style="width: 480px">
-                </label>
-                <x-errors.field-message name="lastName"/>
-            </div>
+                <x-field field-name="firstName" type="text" label="First Name" container-class="col-md-6"/>
 
-            <div class="col-md-6">
-                <label class="form-label">Password
-                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                           style="width: 480px">
-                </label>
-                <x-errors.field-message name="password"/>
-            </div>
+                <x-field field-name="lastName" type="text" label="Last Name" container-class="col-md-6"/>
 
-            <div class="col-md-6">
-                <label class="form-label">Confirm Password
-                    <input type="password" name="confirmPassword"
-                           class="form-control @error('confirmPassword') is-invalid @enderror" style="width: 480px">
-                </label>
-                <x-errors.field-message name="confirmPassword"/>
-            </div>
+                <x-field field-name="password" type="password" label="Password" container-class="col-md-6"/>
 
-            <div class="mb-3">
-                <label for="emailInput" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                       id="emailInput" placeholder="Amir@gmail.com">
-                <x-errors.field-message name="email"/>
-            </div>
+                <x-field field-name="confirmPassword" type="password" label="Confirm Password" container-class="col-md-6"/>
+
+                <x-field field-name="email" type="email" label="Email" container-class="mb-3">Amir@gmail.com</x-field>
+
             <p>you don't have account? &nbsp;<a href="/login">login</a></p>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Sign in</button>
