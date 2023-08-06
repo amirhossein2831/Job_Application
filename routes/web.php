@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\DashBoarController;
+use App\Http\Controllers\Employee\LoginEmployeeController;
+use App\Http\Controllers\Employee\RegisterEmployeeController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\RegisterUserController;
-use App\Http\Middleware\DasboardMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,7 @@ Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('auth')
 Route::get('/login', [LoginUserController::class, 'index'])->name('login');
 Route::post('/login', [LoginUserController::class, 'login']);
 Route::post('/logout',[LogoutController::class,'logout']);
+Route::get('/login/employee',[LoginEmployeeController::class,'index']);
+Route::post('/login/employee',[LoginEmployeeController::class,'login']);
+Route::get('/register/employee',[RegisterEmployeeController::class,'index']);
+Route::post('/register/employee',[RegisterEmployeeController::class,'store']);

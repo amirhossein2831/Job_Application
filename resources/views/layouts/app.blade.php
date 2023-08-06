@@ -27,7 +27,7 @@
                 </li>
                 @if(!Auth()->check())
                     <li class="nav-item">
-                        <a class="nav-link" href="/register/seeker">Employee Login</a>
+                        <a class="nav-link" href="/login/employee">Employee Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login" >User Login</a>
