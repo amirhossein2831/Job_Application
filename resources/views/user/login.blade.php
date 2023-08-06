@@ -3,6 +3,7 @@
 
     <div style="margin-left: 280px;margin-top: 100px">
         <h1>login</h1>
+        <x-successes.success-register />
     </div>
     <div class="container"
          style="display: flex;justify-content: center;align-items: center;width: 1000px;height: 450px;margin-top: 20px;border-radius: 10px;border: 1px solid black">

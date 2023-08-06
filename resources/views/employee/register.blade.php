@@ -10,9 +10,10 @@
     </div>
     <div class="container"
          style="display: flex;justify-content: center;align-items: center;width: 1000px;height: 620px;margin-top: 20px;border-radius: 10px;border: 1px solid black">
-        <form class="row g-3" action="/register/seeker" method="post">
+        <form class="row g-3" action="/register/employee" method="post">
             @csrf
-            <input type="hidden" name="user_type" value="seeker">
+            <input type="hidden" name="user_type" value="employee">
+            <input type="hidden" name="user_trial" value="{{now()->addWeek()}}">
             <div class="col-md-6">
                 <label class="form-label">FirstName
                     <input type="text" name="firstName" class="form-control @error('firstName') is-invalid @enderror"
@@ -59,7 +60,7 @@
                 <x-errors.field-message name="email"/>
             </div>
 
-            <p>you don't have account? &nbsp;<a href="/login">login</a></p>
+            <p>you don't have account? &nbsp;<a href="/login/employee">login</a></p>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </div>
