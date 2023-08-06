@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashBoarController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\User\LoginUserController;
+use App\Http\Controllers\User\RegisterUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/register/seeker', [UserController::class, 'index']);
-Route::get('/login', [UserController::class, 'login']);
-Route::post('/login', [UserController::class, 'postLogin']);
-Route::post('/register/seeker', [UserController::class, 'store']);
+Route::get('/register/seeker', [RegisterUserController::class, 'index']);
+Route::post('/register/seeker', [RegisterUserController::class, 'store']);
 Route::get('/dashboard',[DashBoarController::class,'index']);
+Route::get('/login', [LoginUserController::class, 'index']);
+Route::post('/login', [LoginUserController::class, 'login']);
