@@ -46,6 +46,8 @@
     </div>
 </nav>
 
+<x-successes.success-register />
+
 @yield('contact')
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
