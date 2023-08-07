@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashBoarController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Employee\LoginEmployeeController;
 use App\Http\Controllers\Employee\RegisterEmployeeController;
 use App\Http\Controllers\LogoutController;
@@ -31,10 +32,13 @@ Route::post('/register/employee',[RegisterEmployeeController::class,'store']);
 Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth');
 Route::get('/', function () {return view('layouts.app');});
 
-Route::get('/email/verify', function () {return view('needVerify');})
-    ->middleware('auth')->name('verification.notice');
+Route::get('/email/verify',[EmailController::class,'sendVerification'])
+             ->middleware('auth')->name('verification.notice');
+
+Route::get('/resend/email/verify',[EmailController::class,'reSendVerification'])
+    ->middleware('auth');
 
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
-    return redirect('/home');
+    return redirect('/dashboard')->with('your email verify successfully find your job');
 })->middleware(['auth', 'signed'])->name('verification.verify');
