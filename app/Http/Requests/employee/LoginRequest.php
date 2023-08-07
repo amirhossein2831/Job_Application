@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\employee;
 
+use App\Rules\IsEmployee;
+use App\Rules\IsRegister;
 use Illuminate\Foundation\Http\FormRequest;
 
 class LoginRequest extends FormRequest
@@ -24,7 +26,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email'=>'email|required',
+            'email'=>['bail','email','required',new IsRegister(),new IsEmployee()],
             'password'=>'required',
         ];
     }
