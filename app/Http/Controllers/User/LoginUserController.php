@@ -16,8 +16,13 @@ class LoginUserController extends Controller
     {
         $credential = $request->only('email', 'password');
         if (Auth::attempt($credential)) {
-            return redirect()->intended('/dashboard');
+            $user = Auth::user();
+            if ($user->hasVerifiedEmail()) {
+                return redirect()->intended('/dashboard');
+            }
+            return redirect()->route('verification.notice');
+
         }
-        return "wrong input";
+        return redirect('/login')->withErrors(['password'=>'the password is wrong']);
     }
 }
