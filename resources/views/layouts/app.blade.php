@@ -37,6 +37,9 @@
                 @endif
                 @if(Auth()->check())
                     <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/subscription">subscribe</a>         {{-- need two handle active page--}}
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" id="logout" >Log Out</a>
                     </li>
                 @endif
