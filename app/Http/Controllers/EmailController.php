@@ -8,7 +8,11 @@ class EmailController
 {
     public function sendVerification()
     {
-        return view('needVerify')->with('success', 'email verification send successfully');
+        $user = Auth::user();
+        if (!$user->hasVerifiedEmail()) {
+            return view('needVerify')->with('success', 'email verification send successfully');
+        }
+        return view('needVerify');
     }
 
     public function reSendVerification()
