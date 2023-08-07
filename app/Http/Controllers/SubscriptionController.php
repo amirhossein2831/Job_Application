@@ -10,4 +10,14 @@ class SubscriptionController extends Controller
     {
         return view('subscribe.index');
     }
+    public function weeklySubscribe(){
+        return 'week';
+    }
+    public function monthlySubscribe(){
+        return 'month';
+    }
+    public function yearlySubscribe(){
+        return 'yearly';
+
+    }
 }
