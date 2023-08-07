@@ -15,7 +15,8 @@ class RegisterEmployeeController extends Controller
 
     public function store(RegisterRequest $request)
     {
-        User::create($request->all());
-        return redirect('/login/employee')->with('success','You Registered successFully');
+        $user = User::create($request->all());
+        $user->sendEmailVerificationNotification();
+        return redirect('/login/employee')->with('success', 'You Registered successFully');
     }
 }
