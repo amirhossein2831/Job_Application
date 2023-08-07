@@ -18,6 +18,7 @@ class RegisterUserController extends Controller
     {
         $user = User::create($request->all());
         $user->sendEmailVerificationNotification();
-        return redirect('/login')->with('success', 'Your Registered successfully');
+        Auth::login($user);
+        return redirect()->route('verification.notice')->with('success', 'Your Registered successfully,Verify your email to access dashboard');
     }
 }

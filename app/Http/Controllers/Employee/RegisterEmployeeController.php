@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Employee;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\employee\RegisterRequest;
 use App\Models\User;
+use Auth;
 
 class RegisterEmployeeController extends Controller
 {
@@ -17,6 +18,7 @@ class RegisterEmployeeController extends Controller
     {
         $user = User::create($request->all());
         $user->sendEmailVerificationNotification();
-        return redirect('/login/employee')->with('success', 'You Registered successFully');
+        Auth::login($user);
+        return redirect()->route('verification.notice')->with('success', 'You Registered successFully,Verify your email to access dashboard');
     }
 }
