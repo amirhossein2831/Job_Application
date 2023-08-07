@@ -7,10 +7,11 @@
                     <div class="card-header bg-primary text-white">Verify Account</div>
                     <div class="card-body">
                         <p class="lead">Please verify your account to access the dashboard.</p>
-                        <a href="/resend/email/verify" class="btn btn-primary">Resend Email</a>
+                        <a href="/resend/email/verify" class="btn btn-primary" id="resend-btn">Resend Email</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="{{asset("resources/js/ReSendingButton.js")}}"></script>
 @endsection
