@@ -1,0 +1,31 @@
+body {
+    background: url("./../image/background/4.jpg") no-repeat center;
+    background-size: cover;
+}
+.wrapper {
+    background-color: #2c2b2b;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 30px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+.header {
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 30px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+label{
+    color: #FFFFFF;
+}
+span{
+    color: #FFFFFF;
+}
+h1{
+    color: #FFFFFF;
+}
+h3{
+    color: #FFFFFF;
+}
