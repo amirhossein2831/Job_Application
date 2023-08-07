@@ -8,6 +8,8 @@
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('/resources/css/dashboard-item.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('/resources/css/normalize.css')}}">
+    <link rel="stylesheet" href="{{asset('/resources/css/main.css')}}">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
