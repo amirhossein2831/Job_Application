@@ -1,19 +1,25 @@
 @extends('layouts.app')
 @section('contact')
 
-    <div style="margin-left: 280px;margin-top: 100px">
-        <h1>login</h1>
-    </div>
-    <div class="container"
-         style="display: flex;justify-content: center;align-items: center;width: 1000px;height: 450px;margin-top: 20px;border-radius: 10px;border: 1px solid black">
-        <form class="row g-3" action="/login" method="post">
-            @csrf
-            <x-field field-name="email" type="email" label="Email" container-class="mb-3">Amir@gmail.com</x-field>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h1 class="mb-4">Looking for a job?</h1>
+                <h3>Register Now</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6 border rounded p-4">
+                <form class="row g-3" action="/login" method="post">
+                    @csrf
+                    <x-field field-name="email" type="email" label="Email" container-class="mb-3">Amir@gmail.com</x-field>
 
-            <x-field field-name="password" type="password" label="Password" container-class="col-md-6"/>
+                    <x-field field-name="password" type="password" label="Password" container-class="col-md-6"/>
+                    <p>you don't have account? &nbsp;<a href="/register/seeker">register</a></p>
 
-            <p>you don't have account? &nbsp;<a href="/register/seeker">register</a></p>
-            <x-button.submit-button container-class="col-12" label="Login"/>
-        </form>
+                    <x-button.submit-button container-class="col-12" label="Login"/>
+                </form>
+            </div>
+        </div>
     </div>
 @endsection
