@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('contact')
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-md-4">col1</div>
-            <div class="col-md-4">col2</div>
-            <div class="col-md-4">col3</div>
+            <x-subscribe.payment-card src="week.jpg" label="Week" price="$20" link=""></x-subscribe.payment-card>
+            <x-subscribe.payment-card src="month.jpg" label="Mount" price="$75" link=""></x-subscribe.payment-card>
+            <x-subscribe.payment-card src="year.jpg" label="Year" price="$700" link=""></x-subscribe.payment-card>
         </div>
     </div>
 

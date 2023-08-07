@@ -29,3 +29,8 @@ h1{
 h3{
     color: #FFFFFF;
 }
+.amount-payment{
+    color: chartreuse;
+    font-size: 35px;
+    font-weight: bold;
+}
