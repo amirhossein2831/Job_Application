@@ -32,7 +32,6 @@ Route::get('/register/employee',[RegisterEmployeeController::class,'index']);
 Route::post('/register/employee',[RegisterEmployeeController::class,'store']);
 Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth');
 Route::get('/', function () {return view('layouts.app');});
-Route::get('/subscription', [SubscriptionController::class, 'index'])->middleware('auth','employee');
 
 Route::get('/email/verify',[EmailController::class,'sendVerification'])
              ->middleware('auth')->name('verification.notice');
@@ -44,3 +43,9 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     $request->fulfill();
     return redirect('/dashboard')->with('your email verify successfully find your job');
 })->middleware(['auth', 'signed'])->name('verification.verify');
+Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function () {
+    Route::get('subscription', [SubscriptionController::class, 'index']);
+    Route::get('weekly',[SubscriptionController::class,'weeklySubscribe']);
+    Route::get('monthly',[SubscriptionController::class,'monthlySubscribe']);
+    Route::get('yearly',[SubscriptionController::class,'yearlySubscribe']);
+});
