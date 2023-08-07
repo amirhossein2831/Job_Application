@@ -5,6 +5,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Employee\LoginEmployeeController;
 use App\Http\Controllers\Employee\RegisterEmployeeController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\RegisterUserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -31,6 +32,7 @@ Route::get('/register/employee',[RegisterEmployeeController::class,'index']);
 Route::post('/register/employee',[RegisterEmployeeController::class,'store']);
 Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth');
 Route::get('/', function () {return view('layouts.app');});
+Route::get('/subscription', [SubscriptionController::class, 'index'])->middleware('auth','employee');
 
 Route::get('/email/verify',[EmailController::class,'sendVerification'])
              ->middleware('auth')->name('verification.notice');
