@@ -38,9 +38,11 @@
                     </li>
                 @endif
                 @if(Auth()->check())
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/pay/subscription">subscribe</a>         {{-- need two handle active page--}}
-                    </li>
+                    @if(Auth::user()->user_type === "employee")
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="/pay/subscription">subscribe</a>         {{-- need two handle active page--}}
+                        </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" id="logout" >Log Out</a>
                     </li>
