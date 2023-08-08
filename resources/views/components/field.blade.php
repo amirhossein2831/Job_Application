@@ -1,6 +1,7 @@
-<div class="{{$containerClass}}">
-    <label class="form-label">{{$label}}
-        <input type="{{$type}}" name="{{$fieldName}}" class="form-control @error($fieldName) is-invalid @enderror" placeholder="{{$slot}}">
-    </label>
-    <x-errors.field-message name="{{$fieldName}}"/>
+<div class="input-box @error($fieldName) is-invalid @enderror">
+    <span class="icon"><ion-icon style="color: #FFFFFF" name="{{$iconName}}"></ion-icon></span>
+    <input name="{{$fieldName}}"  type="{{$type}}">
+    <label>{{$label}}</label>
 </div>
+<x-errors.field-message name="{{$fieldName}}"/>
+

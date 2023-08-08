@@ -1,3 +1,3 @@
 @error($name)
-<div style="color: red">{{ $message }}</div>
+<div class="error-text">{{$message}}</div>
 @enderror
