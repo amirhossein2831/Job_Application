@@ -113,6 +113,9 @@ body {
     border-bottom: 2px solid #FFFFFF;
     margin: 30px 0;
 }
+.is-invalid{
+    border-bottom: 2px solid red;
+}
 
 .input-box label {
     position: absolute;

@@ -33,7 +33,8 @@
         @endif
         @if(Auth()->check())
             <a class="a" href="/profile">Profile</a>
-            <a class="nav-link" id="logout" >Log Out</a>
+            <a class="a" href="/dashboard">Dashboard</a>
+            <a><button  class="brn_login" id="logout">Log out</button></a>
         @endif
         <form action="/logout" id="logoutForm" method="post">@csrf</form>
     </nav>
