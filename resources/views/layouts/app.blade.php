@@ -1,72 +1,51 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('/resources/css/dashboard-item.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/app.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('/resources/css/style.css')}}">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="{{asset('resources/image/logo/FJLogo.png')}}" alt="Logo" width="30"
-                 style="margin-top: -5px;border-radius: 5px" height="24" class="d-inline-block  align-text-top">
-            <span style="margin-right: 10px">Find Job</span>
-        </a>
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="/">Home</a>         {{-- need two handle active page--}}
-                </li>
-                @if(!Auth()->check())
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login/employee">Employee Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login" >User Login</a>
-                    </li>
-                @endif
-                @if(Auth()->check())
-                    @if(Auth::user()->user_type === "employee")
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="/pay/subscription">subscribe</a>         {{-- need two handle active page--}}
-                        </li>
-                    @endif
-                    <li class="nav-item">
-                        <a class="nav-link" id="logout" >Log Out</a>
-                    </li>
-                @endif
-                <form action="/logout" id="logoutForm" method="post">@csrf</form>
-
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<header>
+    <h2 class="logo">PHP MVC Framework</h2>
+    <nav class="navigation">
+        <a class="a" href="/">Home</a>
+        <a class="a" href="/contact">Contact</a>
+        <a class="a" href="/about">About</a>
+        <a class="a" href="/service">Service</a>
+        @if(!Auth()->check())
+            <a href="/login/employee">
+                <button  class="brn_login" style="width: 150px">Employee Login</button>
+            </a>
+            <a href="/login">
+                <button  class="brn_login">User Login</button>
+            </a>
+        @endif
+        @if(Auth()->check() && Auth::user()->user_type === "employee" )
+            <a class="a " href="/pay/subscription">subscribe</a>         {{-- need two handle active page--}}
+        @endif
+        @if(Auth()->check())
+            <a class="a" href="/profile">Profile</a>
+            <a class="nav-link" id="logout" >Log Out</a>
+        @endif
+        <form action="/logout" id="logoutForm" method="post">@csrf</form>
+    </nav>
+</header>
 <x-successes.success-register />
 
 @yield('contact')
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-        crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="{{asset('resources/js/SubmitForm.js')}}"></script>
+<script src="{{asset('resources/js/AnimationLabel.js')}}"></script>
+
 </body>
 </html>
