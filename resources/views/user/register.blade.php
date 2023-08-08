@@ -8,15 +8,15 @@
                 @csrf
                 <input type="hidden" name="user_type" value="seeker">
 
-                <x-field field-name="firstName" type="text" label="First Name" icon-name="person"/>
+                <x-field field-name="firstName" type="text" label="First Name" icon-name="person" value="{{old('firstName')}}"/>
 
-                <x-field field-name="lastName" type="text" label="Last Name" icon-name="person"/>
+                <x-field field-name="lastName" type="text" label="Last Name" icon-name="person" value="{{old('lastName')}}"/>
 
-                <x-field field-name="password" type="password" label="Password" icon-name="lock-closed"/>
+                <x-field field-name="password" type="password" label="Password" icon-name="lock-closed" value="{{old('password')}}"/>
 
-                <x-field field-name="confirmPassword" type="password" label="Confirm Password" icon-name="lock-closed"/>
+                <x-field field-name="confirmPassword" type="password" label="Confirm Password" icon-name="lock-closed" value="{{old('confirmPassword')}}"/>
 
-                <x-field field-name="email" type="email" icon-name="mail" label="Email"/>
+                <x-field field-name="email" type="email" icon-name="mail" label="Email" value="{{old('email')}}"/>
 
                     <div class="login-register">
                         <p>already have account? &nbsp;<a href="/login" class="register-link">Login</a></p>

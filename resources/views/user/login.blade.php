@@ -3,12 +3,11 @@
 
     <div id="container" class="wrapper" style="height: auto;width: 500px">
         <div class="form-box login">
-            <h2>Login User</h2>
+            <h2>User Login</h2>
             <form action="/login" method="post">
                 @csrf
-                <x-field field-name="email" type="email" icon-name="mail" label="Email"></x-field>
-
-                <x-field field-name="password" icon-name="lock-closed" type="password" label="Password" />
+                <x-field field-name="email" type="email" icon-name="mail" label="Email" value="{{old('email')}}"></x-field>
+                <x-field field-name="password" icon-name="lock-closed" type="password" label="Password" value="{{old('password')}}"/>
 
                 <div class="remember-forget">
                     <label ><input type="checkbox">Remember me</label>
