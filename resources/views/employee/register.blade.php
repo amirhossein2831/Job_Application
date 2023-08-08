@@ -24,7 +24,7 @@
                 <div class="login-register">
                     <p>already have account? &nbsp;<a href="/login/employee" class="register-link">Login</a></p>
                 </div>
-                <x-button.submit-button container-class="col-12" label="Sign in"/>
+                <button type="submit" id="register-btn" class="button">Sign Up</button>
 
             </form>
         </div>

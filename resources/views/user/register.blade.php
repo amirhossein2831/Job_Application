@@ -21,7 +21,7 @@
                     <div class="login-register">
                         <p>already have account? &nbsp;<a href="/login" class="register-link">Login</a></p>
                     </div>
-                <button type="submit" id="register-btn" class="btn btn-primary">Sign Up</button>
+                <button type="submit" id="register-btn" class="button">Sign Up</button>
               </form>
         </div>
     </div>

@@ -17,7 +17,7 @@
                     <p>you don't have account? &nbsp;<a href="/register/seeker" class="register-link">Register</a></p>
                 </div>
 
-                <button type="submit" id="register-btn" class="btn btn-primary">Login</button>
+                <button type="submit" id="register-btn" class="button">Login</button>
             </form>
         </div>
     </div>
