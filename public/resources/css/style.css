@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("./../image/background/4.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+    left: -20px;
+}
+
+.navigation .a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    left: 0;
+    bottom: -6px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation .a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.brn_login {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #ffffff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.brn_login:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+. wrapper . form-box display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #162938;
+
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #FFFFFF;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    font-weight: 500;
+    color: #FFFFFF;
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box input:hover ~ label {
+    top: -5px;
+}
+
+.stay {
+    top: -5px !important;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+.remember-forget {
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: 10px 0 15px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.remember-forget label input {
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forget a {
+    color: #162938;
+    text-decoration: none;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #ffffff;
+    margin-top: 20px;
+
+}
+
+.login-register {
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-register p{
+    color: #FFFFFF;
+}
+.login-register p a {
+    color: aqua;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px) scale(0.7) rotate(30deg);
+    transition: opacity 1s ease, transform 1.5s cubic-bezier(0.6, 0.05, 0.28, 0.91);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+    transition: opacity 1s ease, transform 1.5s cubic-bezier(0.6, 0.05, 0.28, 0.91);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in-on-load {
+    animation: fadeIn 1s ease forwards;
+}
+
+.error-box {
+    border-bottom: 2px solid #F51212;
+}
+
+.error-text {
+    color: #F51212;
+    font-family: "Century Schoolbook L" ,sans-serif;
+    font-size: .9em;
+    font-weight: bold;
+    margin-top: -25px
+}
+.alert {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    width: 100%;
+    height: 10px;
+    left: 0;
+    margin-top: 10px;
+}
+.alert-success {
+    background: transparent;
+    backdrop-filter: blur(50px);
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+.close-button:hover{
+    font-weight: bold;
+    font-style: italic;
+}
+.logout-btn{
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-left: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+.no{
+    background: darkcyan;
+    margin-left: 0;
+}
+.ok {
+    background: orangered;
+    margin-left: 100px;
+}
+.no:hover,.ok:hover{
+    font-style: italic;
+    font-weight: bold;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(100px);
+}
+.logout-container div{
+    margin-top: 15px;
+}
+.help-logout-container{
+    margin-top: 5px;
+}
+.logout-container span{
+    color: #ffffff;
+}
+.profile-container {
+    margin-bottom: 30px;
+}
+.profile-field {
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    height: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.3em;
+    left: 0;
+}
+.profile-field span{
+    font-size: 18px;
+    font-weight: lighter;
+    color: darkgrey;
+}
+.profile-header{
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 1.4em;
+}
