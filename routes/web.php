@@ -57,4 +57,7 @@ Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function 
 
 Route::get('job/create',[PostJobController::class,'index'])->middleware(CanPost::class);
 Route::post('job/create',[PostJobController::class,'create'])->middleware(CanPost::class);
+Route::get('index', function () {
+    return view('layouts.admin.main');
 
+});
