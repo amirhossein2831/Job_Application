@@ -6,7 +6,7 @@
         @include('layouts.admin.sidebar')
     </div>
     <div id="layoutSidenav_content">
-        @include('layouts.admin.body')
+        @yield('contact')
         @include('layouts.admin.footer')
     </div>
 </div>
