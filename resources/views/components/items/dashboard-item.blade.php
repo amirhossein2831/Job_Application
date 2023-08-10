@@ -1,8 +1,9 @@
-<div class="col-md-3">
-    <div class="card-counter {{$class}}">
-        <p class="text-center mt-3 lead">
-           {{$label}}
-        </p>
-        <button class="btn btn-primary float-end" id="viewItem">View</button>
+<div class="col-xl-3 col-md-6">
+    <div class="card {{$class}} text-white mb-4">
+        <div class="card-body">{{$title}}</div>
+        <div class="card-footer d-flex align-items-center justify-content-between">
+            <a class="small text-white stretched-link" href="{{$link}}">View Details</a>
+            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+        </div>
     </div>
 </div>

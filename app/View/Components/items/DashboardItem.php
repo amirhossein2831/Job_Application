@@ -9,21 +9,24 @@ use Illuminate\View\Component;
 
 class DashboardItem extends Component
 {
-    public string $label;
+    public string $title;
 
+    public string $link;
     public string $class;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($label,$class)
+    public function __construct($title,$link,$class)
     {
-        $this->label = $label;
+        $this->title = $title;
+        $this->link = $link;
         $this->class = $class;
     }
 
     /**
+     *
      * Get the view / contents that represent the component.
      *
      * @return Application|Factory|View

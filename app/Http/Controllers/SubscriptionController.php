@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PurchaseMail;
 use App\Models\User;
 use Auth;
-use Carbon\Carbon;
+use Exception;
+use Mail;
 
 class SubscriptionController extends Controller
 {
@@ -16,6 +18,11 @@ class SubscriptionController extends Controller
     public function weeklySubscribe()
     {
         $this->updateDB('weekly');
+        try {
+            Mail::to(Auth::user())->queue(new PurchaseMail(['name' => 'weekly', 'amount' => '20$', 'billingEnds' => Auth::user()->billing_ends]));
+        } catch (Exception $exception) {
+            return response()->json($exception);
+        }
         return redirect('/')->with('success', 'your account charge successfully for one week');
 
     }
@@ -23,6 +30,11 @@ class SubscriptionController extends Controller
     public function monthlySubscribe()
     {
         $this->updateDB('monthly');
+        try {
+            Mail::to(Auth::user())->queue(new PurchaseMail(['name'=>'monthly','amount'=>'75$','billingEnds'=>Auth::user()->billing_ends]));
+        } catch (Exception $exception) {
+            return response()->json($exception);
+        }
         return redirect('/')->with('success', 'your account charge successfully for one mount');
 
     }
@@ -30,6 +42,11 @@ class SubscriptionController extends Controller
     public function yearlySubscribe()
     {
         $this->updateDB('yearly');
+        try {
+            Mail::to(Auth::user())->queue(new PurchaseMail(['name'=>'yearly','amount'=>'700$','billingEnds'=>Auth::user()->billing_ends]));
+        } catch (Exception $exception) {
+            return response()->json($exception);
+        }
         return redirect('/')->with('success', 'your account charge successfully for one year');
     }
 
@@ -37,24 +54,11 @@ class SubscriptionController extends Controller
     {
         $date = Auth::user()->billing_ends;
         if ($plan === 'weekly') {
-            if (!is_null($date)) {
-                $date = Carbon::createFromFormat("Y-m-d", $date);
-                $date = $date->copy()->addWeek();
-            } else
-                $date = now()->addWeek();
-
+            $date = now()->addWeek();
         } else if ($plan === 'monthly') {
-            if (!is_null($date)) {
-                $date = Carbon::createFromFormat("Y-m-d", $date);
-                $date = $date->copy()->addMonth();
-            } else
-                $date = now()->addMonth();
+            $date = now()->addMonth();
         } else if ($plan === 'yearly') {
-            if (!is_null($date)) {
-                $date = Carbon::createFromFormat("Y-m-d", $date);
-                $date = $date->copy()->addYear();
-            } else
-                $date = now()->addYear();
+            $date = now()->addYear();
         }
         User::where('id', Auth::id())->update(
             [
