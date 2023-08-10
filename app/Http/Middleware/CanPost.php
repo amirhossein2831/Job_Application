@@ -23,9 +23,9 @@ class CanPost
         $trial = $user->user_trial;
         $billingEnd = $user->billing_ends;
         if ($trial < now()->format('Y-m-d') && is_null($billingEnd)) {
-            return redirect('/pay/subscription')->with('success', 'you need to make your account premium');
+            return redirect('/pay/subscription')->with('warning', 'you need to make your account premium');
         }else if ($trial < now()->format('Y-m-d') && $billingEnd < now()->format('Y-m-d')) {
-            return redirect('/pay/subscription')->with('success', 'your premium account time has finish perches new one');
+            return redirect('/pay/subscription')->with('warning', 'your premium account time has finish perches new one');
         }
         return $next($request);
     }
