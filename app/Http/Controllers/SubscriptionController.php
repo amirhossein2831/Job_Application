@@ -32,5 +32,36 @@ class SubscriptionController extends Controller
         $this->updateDB('yearly');
         return redirect('/')->with('success', 'your account charge successfully for one year');
     }
-    
+
+    private function updateDB($plan)
+    {
+        $date = Auth::user()->billing_ends;
+        if ($plan === 'weekly') {
+            if (!is_null($date)) {
+                $date = Carbon::createFromFormat("Y-m-d", $date);
+                $date = $date->copy()->addWeek();
+            } else
+                $date = now()->addWeek();
+
+        } else if ($plan === 'monthly') {
+            if (!is_null($date)) {
+                $date = Carbon::createFromFormat("Y-m-d", $date);
+                $date = $date->copy()->addMonth();
+            } else
+                $date = now()->addMonth();
+        } else if ($plan === 'yearly') {
+            if (!is_null($date)) {
+                $date = Carbon::createFromFormat("Y-m-d", $date);
+                $date = $date->copy()->addYear();
+            } else
+                $date = now()->addYear();
+        }
+        User::where('id', Auth::id())->update(
+            [
+                'plan' => $plan,
+                'billing_ends' => $date,
+                'status' => 'paid',
+            ]
+        );
+    }
 }
