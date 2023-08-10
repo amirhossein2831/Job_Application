@@ -27,3 +27,7 @@
     color: #26c6da;
     font-style: italic;
 }
+#viewItem:hover{
+    background-color: transparent;
+    border-color: white;
+}

@@ -3,6 +3,6 @@
         <p class="text-center mt-3 lead">
            {{$label}}
         </p>
-        <button class="btn btn-primary float-end">View</button>
+        <button class="btn btn-primary float-end" id="viewItem">View</button>
     </div>
 </div>

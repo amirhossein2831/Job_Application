@@ -5,6 +5,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Employee\LoginEmployeeController;
 use App\Http\Controllers\Employee\RegisterEmployeeController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\RegisterUserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -42,3 +43,11 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     $request->fulfill();
     return redirect('/dashboard')->with('your email verify successfully find your job');
 })->middleware(['auth', 'signed'])->name('verification.verify');
+Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function () {
+    Route::get('subscription', [SubscriptionController::class, 'index']);
+    Route::get('weekly',[SubscriptionController::class,'weeklySubscribe']);
+    Route::get('monthly',[SubscriptionController::class,'monthlySubscribe']);
+    Route::get('yearly',[SubscriptionController::class,'yearlySubscribe']);
+    Route::get('success',[SubscriptionController::class,'successPay'])->name('successPay');
+    Route::get('failed',[SubscriptionController::class,'failedPay'])->name('failedPay');
+});

@@ -1,25 +1,24 @@
 @extends('layouts.app')
 @section('contact')
-    <div class="container mt-5 ">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center p-4 header">
-                <h1 class="mb-4">Login Employee</h1>
-                <h4>do your job in the best way</h4>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-4">
-            <div class="col-md-6  p-4 wrapper">
-                <form class="row g-3" action="/login/employee" method="post">
-                    @csrf
-                    <x-field field-name="email" type="email" label="Email" container-class="mb-3">Amir@gmail.com</x-field>
+    <div id="container" class="wrapper" style="height: auto;width: 500px">
+        <div class="form-box login">
+            <h2>Employee Login</h2>
+            <form action="/login/employee" method="post">
+                @csrf
+                <x-field field-name="email" type="email" icon-name="mail" label="Email" value="{{old('email')}}"></x-field>
 
-                    <x-field field-name="password" type="password" label="Password" container-class="mb-3"/>
+                <x-field field-name="password" icon-name="lock-closed" type="password" label="Password" value="{{old('password')}}"/>
 
-                    <span>you don't have account? &nbsp;<a href="/register/employee">register</a></span>
+                <div class="remember-forget">
+                    <label><input type="checkbox">Remember me</label>
+                    <a style="color: aqua" href="/forgetPassword/employee">ForgetPassword</a>
+                </div>
+                <div class="login-register">
+                    <p>you don't have account? &nbsp;<a href="/register/employee" class="register-link">Register</a></p>
+                </div>
 
-                    <x-button.submit-button container-class="col-12" label="Login"/>
-                </form>
-            </div>
+                <button type="submit" id="register-btn" class="button">Login</button>
+            </form>
         </div>
     </div>
 @endsection

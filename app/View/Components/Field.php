@@ -12,18 +12,20 @@ class Field extends Component
     public string $fieldName;
     public string $label;
     public string $type;
-    public string $containerClass;
+    public string $iconName;
+    public string $value;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($fieldName,$type,$label,$containerClass)
+    public function __construct($fieldName, $type, $label, $iconName,$value)
     {
         $this->fieldName = $fieldName;
         $this->type = $type;
         $this->label = $label;
-        $this->containerClass = $containerClass;
+        $this->iconName = $iconName;
+        $this->value = $value;
     }
 
     /**

@@ -1,5 +1,4 @@
 body {
-    background: url("./../image/background/4.jpg") no-repeat center;
     background-size: cover;
 }
 .wrapper {
@@ -28,4 +27,9 @@ h1{
 }
 h3{
     color: #FFFFFF;
+}
+.amount-payment{
+    color: chartreuse;
+    font-size: 35px;
+    font-weight: bold;
 }
