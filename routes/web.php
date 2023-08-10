@@ -48,4 +48,6 @@ Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function 
     Route::get('weekly',[SubscriptionController::class,'weeklySubscribe']);
     Route::get('monthly',[SubscriptionController::class,'monthlySubscribe']);
     Route::get('yearly',[SubscriptionController::class,'yearlySubscribe']);
+    Route::get('success',[SubscriptionController::class,'successPay'])->name('successPay');
+    Route::get('failed',[SubscriptionController::class,'failedPay'])->name('failedPay');
 });
