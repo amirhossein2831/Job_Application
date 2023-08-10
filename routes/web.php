@@ -9,6 +9,8 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\RegisterUserController;
+use App\Http\Middleware\CanPerches;
+use App\Http\Middleware\CanPost;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
@@ -46,12 +48,13 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 })->middleware(['auth', 'signed'])->name('verification.verify');
 Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function () {
     Route::get('subscription', [SubscriptionController::class, 'index']);
-    Route::get('weekly',[SubscriptionController::class,'weeklySubscribe']);
-    Route::get('monthly',[SubscriptionController::class,'monthlySubscribe']);
-    Route::get('yearly',[SubscriptionController::class,'yearlySubscribe']);
+    Route::get('weekly',[SubscriptionController::class,'weeklySubscribe'])->middleware(CanPerches::class);
+    Route::get('monthly',[SubscriptionController::class,'monthlySubscribe'])->middleware(CanPerches::class);
+    Route::get('yearly',[SubscriptionController::class,'yearlySubscribe'])->middleware(CanPerches::class);
     Route::get('success',[SubscriptionController::class,'successPay'])->name('successPay');
     Route::get('failed',[SubscriptionController::class,'failedPay'])->name('failedPay');
 });
 
-Route::get('job/create',[PostJobController::class,'index']);
-Route::post('job/create',[PostJobController::class,'create']);
+Route::get('job/create',[PostJobController::class,'index'])->middleware(CanPost::class);
+Route::post('job/create',[PostJobController::class,'create'])->middleware(CanPost::class);
+
