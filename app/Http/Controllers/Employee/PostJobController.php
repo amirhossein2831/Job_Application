@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class PostJobController extends Controller
 {
+    public function index()
+    {
+        return "post";
+    }
     public function create()
     {
         return "hello";

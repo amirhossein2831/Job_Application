@@ -37,24 +37,11 @@ class SubscriptionController extends Controller
     {
         $date = Auth::user()->billing_ends;
         if ($plan === 'weekly') {
-            if (!is_null($date)) {
-                $date = Carbon::createFromFormat("Y-m-d", $date);
-                $date = $date->copy()->addWeek();
-            } else
-                $date = now()->addWeek();
-
+            $date = now()->addWeek();
         } else if ($plan === 'monthly') {
-            if (!is_null($date)) {
-                $date = Carbon::createFromFormat("Y-m-d", $date);
-                $date = $date->copy()->addMonth();
-            } else
-                $date = now()->addMonth();
+            $date = now()->addMonth();
         } else if ($plan === 'yearly') {
-            if (!is_null($date)) {
-                $date = Carbon::createFromFormat("Y-m-d", $date);
-                $date = $date->copy()->addYear();
-            } else
-                $date = now()->addYear();
+            $date = now()->addYear();
         }
         User::where('id', Auth::id())->update(
             [
