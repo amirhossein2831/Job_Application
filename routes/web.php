@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashBoarController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Employee\LoginEmployeeController;
+use App\Http\Controllers\Employee\PostJobController;
 use App\Http\Controllers\Employee\RegisterEmployeeController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SubscriptionController;
@@ -51,3 +52,6 @@ Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function 
     Route::get('success',[SubscriptionController::class,'successPay'])->name('successPay');
     Route::get('failed',[SubscriptionController::class,'failedPay'])->name('failedPay');
 });
+
+Route::get('job/create',[PostJobController::class,'index']);
+Route::post('job/create',[PostJobController::class,'create']);
