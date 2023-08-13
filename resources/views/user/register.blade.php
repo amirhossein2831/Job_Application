@@ -19,7 +19,7 @@
                 <x-field field-name="email" type="email" icon-name="mail" label="Email" value="{{old('email')}}"/>
 
                     <div class="login-register">
-                        <p>already have account? &nbsp;<a href="/login" class="register-link">Login</a></p>
+                        <p>already have account? &nbsp;<a href="/login/seeker" class="register-link">Login</a></p>
                     </div>
                 <button type="submit" id="register-btn" class="button">Sign Up</button>
               </form>

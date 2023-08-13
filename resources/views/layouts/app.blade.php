@@ -25,7 +25,7 @@
             <a href="/login/employee">
                 <button  class="brn_login" style="width: 150px">Employee Login</button>
             </a>
-            <a href="/login">
+            <a href="/login/seeker">
                 <button  class="brn_login">User Login</button>
             </a>
         @endif
