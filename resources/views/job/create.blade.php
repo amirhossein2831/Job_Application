@@ -4,7 +4,7 @@
         <div class="row justify-content-center"></div>
         <div class="col-md-8 mt-5"></div>
         <h1>Post a Job</h1>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="user_id" value="{{Auth::id()}}">
             <x-input-field label="Title" id="title" name="title" type="text"/>
