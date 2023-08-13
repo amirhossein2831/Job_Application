@@ -6,11 +6,13 @@
         <h1>Post a Job</h1>
         <form action="" method="post">
             @csrf
+            <input type="hidden" name="user_id" value="{{Auth::id()}}">
             <x-input-field label="Title" id="title" name="title" type="text"/>
             <x-input-field label="Description" id="description" name="description" type="textarea"/>
             <x-input-field label="Roles and Responsibility" id="roles" name="roles" type="textarea"/>
+            <x-input-field label="Salary" id="salary" name="salary" type="text"/>
             <x-input-field label="Address" id="address" name="address" type="text"/>
-            <x-input-field label="Closing Date" id="closingDate" name="closingDate" type="date"/>
+            <x-input-field label="Closing Date" id="close_date" name="close_date" type="date"/>
             <x-input-field label="Job Image" id="post_image" name="post_image" type="file"/>
             <div class="form-group mt-3">
                 <label for="">Job Type</label>
