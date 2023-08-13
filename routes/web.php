@@ -59,5 +59,4 @@ Route::get('job/create',[PostJobController::class,'index'])->middleware(CanPost:
 Route::post('job/create',[PostJobController::class,'create'])->middleware(CanPost::class);
 Route::get('index', function () {
     return view('layouts.admin.main');
-
 });

@@ -9,7 +9,7 @@ class PostJobController extends Controller
 {
     public function index()
     {
-        return "post";
+        return view('job.create');
     }
     public function create()
     {
