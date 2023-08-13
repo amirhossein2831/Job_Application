@@ -3,7 +3,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center"></div>
         <div class="col-md-8 mt-5"></div>
-        <h1>Post a Job</h1>
+        <h1>Post Job</h1>
         <form action="" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="user_id" value="{{Auth::id()}}">

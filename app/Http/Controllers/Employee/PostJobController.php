@@ -12,6 +12,7 @@ class PostJobController extends Controller
     {
         return view('job.create');
     }
+
     public function store(PostJobRequest $request)
     {
         $path = $request->file('post_image')->store('image', 'public'); // Store the image in the 'public' disk under the 'image' directory
@@ -22,6 +23,16 @@ class PostJobController extends Controller
         if (Post::create($data)) {
             return redirect('/dashboard')->with('success', 'Post created successfully');
         }
-        return redirect('/dashboard')->with('warning','somethings went wrong,try again');
+        return redirect('/dashboard')->with('warning', 'somethings went wrong,try again');
+    }
+
+    public function edit(Post $post)
+    {
+        return view('job.edit',['post'=>$post]);
+    }
+
+    public function update()
+    {
+        
     }
 }
