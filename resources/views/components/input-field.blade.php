@@ -6,12 +6,12 @@
 @elseif($type === 'textarea')
     <div class="form-group mt-2">
         <label for="{{$id}}">{{$label}}</label>
-            <textarea name="{{$name}}" id="{{$id}}" class="form-control @error($name) is-invalid @enderror"></textarea>
+            <textarea name="{{$name}}" id="{{$id}}" class="form-control @error($name) is-invalid @enderror">{{old($name)}}</textarea>
     </div>
 @else
     <div class="form-group mt-2">
         <label for="{{$id}}">{{$label}}</label>
-        <input type="{{$type}}" name="{{$name}}" id="{{$id}}" class="form-control @error($name) is-invalid @enderror">
+        <input type="{{$type}}" name="{{$name}}" id="{{$id}}" class="form-control @error($name) is-invalid @enderror" value="{{old($name)}}">
     </div>
 @endif
 <x-errors.field-message name="{{$name}}"/>
