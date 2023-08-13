@@ -33,6 +33,6 @@ class PostJobController extends Controller
 
     public function update()
     {
-        
+
     }
 }

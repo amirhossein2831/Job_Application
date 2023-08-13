@@ -13,19 +13,22 @@ class InputField extends Component
     public string $name;
     public string $type;
     public string $id;
+    public string $value;
 
     /**
      * @param string $label
      * @param string $name
      * @param string $type
      * @param string $id
+     * @param string $value
      */
-    public function __construct(string $label, string $name, string $type, string $id)
+    public function __construct(string $label, string $name, string $type, string $id,string $value)
     {
         $this->label = $label;
         $this->name = $name;
         $this->type = $type;
         $this->id = $id;
+        $this->value = $value;
     }
 
     /**
