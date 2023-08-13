@@ -3,9 +3,10 @@
     <div class="container mt-5">
         <div class="row justify-content-center"></div>
         <div class="col-md-8 mt-5"></div>
-        <h1>edit Job</h1>
+        <h1>Edit Job</h1>
         <form action="" method="post" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <input type="hidden" name="user_id" value="{{Auth::id()}}">
             <x-input-field label="Title" id="title" name="title" type="text" value="{{$post->title}}"/>
             <x-input-field label="Description" id="description" name="description" type="textarea" value="{{$post->description}}"/>
@@ -23,7 +24,7 @@
                 <x-input-field label="Contract" id="contract" name="contract" type="radio" value="">@if($job === 'contract') checked @endif</x-input-field>
             </div>
             <div class="form-group mt-5">
-                <button type="submit" class="btn btn-success">Post Job</button>
+                <button type="submit" class="btn btn-success">Update Job</button>
             </div>
         </form>
     </div>
