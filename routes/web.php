@@ -59,6 +59,9 @@ Route::get('job/create',[PostJobController::class,'index'])->middleware(CanPost:
 Route::post('job/create',[PostJobController::class,'store'])->middleware(CanPost::class);
 Route::get('job/edit/{post}',[PostJobController::class,'edit'])->middleware(CanPost::class);
 Route::put('job/edit/{post}',[PostJobController::class,'update'])->middleware(CanPost::class);
+Route::delete('job/delete/{post}',[PostJobController::class,'delete'])->middleware(CanPost::class);
+Route::get('job/delete/{post}',[PostJobController::class,'delete'])->middleware(CanPost::class);
+
 Route::get('index', function () {
     return view('layouts.admin.main');
 });
