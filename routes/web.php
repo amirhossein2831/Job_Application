@@ -9,8 +9,6 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\RegisterUserController;
-use App\Http\Middleware\CanPerches;
-use App\Http\Middleware\CanPost;
 use App\Http\Middleware\IsYourPost;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
@@ -25,15 +23,37 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/register/seeker', [RegisterUserController::class, 'index']);
-Route::post('/register/seeker', [RegisterUserController::class, 'store']);
-Route::get('/login', [LoginUserController::class, 'index'])->name('login');
-Route::post('/login', [LoginUserController::class, 'login']);
+//login group
+Route::group(['prefix' => 'login','middleware' => 'loggedIn'], function () {
+    Route::get('/seeker', [LoginUserController::class, 'index'])->name('login');
+    Route::post('/seeker', [LoginUserController::class, 'login']);
+    Route::get('/employee',[LoginEmployeeController::class,'index']);
+    Route::post('/employee',[LoginEmployeeController::class,'login']);
+});
+//register group
+Route::group(['prefix' => 'register','middleware' => 'loggedIn'], function () {
+    Route::get('/seeker', [RegisterUserController::class, 'index']);
+    Route::post('/seeker', [RegisterUserController::class, 'store']);
+    Route::get('/employee',[RegisterEmployeeController::class,'index']);
+    Route::post('/employee',[RegisterEmployeeController::class,'store']);
+});
+//pay group
+Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function () {
+    Route::get('subscription', [SubscriptionController::class, 'index']);
+    Route::get('weekly',[SubscriptionController::class,'weeklySubscribe'])->middleware('isPurchased');
+    Route::get('monthly',[SubscriptionController::class,'monthlySubscribe'])->middleware('isPurchased');
+    Route::get('yearly',[SubscriptionController::class,'yearlySubscribe'])->middleware('isPurchased');
+});
+//job group
+Route::group(['prefix' => 'job'], function () {
+    Route::get('/create',[PostJobController::class,'index'])->middleware('isPremium');
+    Route::post('/create',[PostJobController::class,'store'])->middleware('isPremium');
+    Route::get('/edit/{post}',[PostJobController::class,'edit'])->middleware('isPremium',IsYourPost::class);
+    Route::put('/edit/{post}',[PostJobController::class,'update'])->middleware('isPremium',IsYourPost::class);
+    Route::get('/delete/{post}',[PostJobController::class,'delete'])->middleware('isPremium',IsYourPost::class);
+});
 Route::post('/logout',[LogoutController::class,'logout']);
-Route::get('/login/employee',[LoginEmployeeController::class,'index']);
-Route::post('/login/employee',[LoginEmployeeController::class,'login']);
-Route::get('/register/employee',[RegisterEmployeeController::class,'index']);
-Route::post('/register/employee',[RegisterEmployeeController::class,'store']);
+
 Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth');
 Route::get('/', function () {return view('layouts.app');});
 
@@ -47,22 +67,3 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     $request->fulfill();
     return redirect('/dashboard')->with('your email verify successfully find your job');
 })->middleware(['auth', 'signed'])->name('verification.verify');
-Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function () {
-    Route::get('subscription', [SubscriptionController::class, 'index']);
-    Route::get('weekly',[SubscriptionController::class,'weeklySubscribe'])->middleware(CanPerches::class);
-    Route::get('monthly',[SubscriptionController::class,'monthlySubscribe'])->middleware(CanPerches::class);
-    Route::get('yearly',[SubscriptionController::class,'yearlySubscribe'])->middleware(CanPerches::class);
-    Route::get('success',[SubscriptionController::class,'successPay'])->name('successPay');
-    Route::get('failed',[SubscriptionController::class,'failedPay'])->name('failedPay');
-});
-Route::group(['prefix' => 'job'], function () {
-    Route::get('/create',[PostJobController::class,'index'])->middleware(CanPost::class);
-    Route::post('/create',[PostJobController::class,'store'])->middleware(CanPost::class);
-    Route::get('/edit/{post}',[PostJobController::class,'edit'])->middleware(CanPost::class)->middleware(IsYourPost::class);
-    Route::put('/edit/{post}',[PostJobController::class,'update'])->middleware(CanPost::class)->middleware(IsYourPost::class);
-    Route::get('/delete/{post}',[PostJobController::class,'delete'])->middleware(CanPost::class)->middleware(IsYourPost::class);
-});
-
-Route::get('index', function () {
-    return view('layouts.admin.main');
-});
