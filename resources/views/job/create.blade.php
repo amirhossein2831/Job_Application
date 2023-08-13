@@ -11,7 +11,7 @@
             <x-input-field label="Roles and Responsibility" id="roles" name="roles" type="textarea"/>
             <x-input-field label="Address" id="address" name="address" type="text"/>
             <x-input-field label="Closing Date" id="closingDate" name="closingDate" type="date"/>
-            <x-input-field label="Job Image" id="jobImage" name="jobImage" type="file"/>
+            <x-input-field label="Job Image" id="post_image" name="post_image" type="file"/>
             <div class="form-group mt-3">
                 <label for="">Job Type</label>
                 <x-input-field label="Full Time" id="fullTime" name="fullTime" type="radio"/>
