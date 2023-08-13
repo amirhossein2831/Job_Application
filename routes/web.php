@@ -11,6 +11,7 @@ use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\RegisterUserController;
 use App\Http\Middleware\CanPerches;
 use App\Http\Middleware\CanPost;
+use App\Http\Middleware\IsYourPost;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
@@ -54,13 +55,13 @@ Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function 
     Route::get('success',[SubscriptionController::class,'successPay'])->name('successPay');
     Route::get('failed',[SubscriptionController::class,'failedPay'])->name('failedPay');
 });
-
-Route::get('job/create',[PostJobController::class,'index'])->middleware(CanPost::class);
-Route::post('job/create',[PostJobController::class,'store'])->middleware(CanPost::class);
-Route::get('job/edit/{post}',[PostJobController::class,'edit'])->middleware(CanPost::class);
-Route::put('job/edit/{post}',[PostJobController::class,'update'])->middleware(CanPost::class);
-Route::delete('job/delete/{post}',[PostJobController::class,'delete'])->middleware(CanPost::class);
-Route::get('job/delete/{post}',[PostJobController::class,'delete'])->middleware(CanPost::class);
+Route::group(['prefix' => 'job'], function () {
+    Route::get('/create',[PostJobController::class,'index'])->middleware(CanPost::class);
+    Route::post('/create',[PostJobController::class,'store'])->middleware(CanPost::class);
+    Route::get('/edit/{post}',[PostJobController::class,'edit'])->middleware(CanPost::class)->middleware(IsYourPost::class);
+    Route::put('/edit/{post}',[PostJobController::class,'update'])->middleware(CanPost::class)->middleware(IsYourPost::class);
+    Route::get('/delete/{post}',[PostJobController::class,'delete'])->middleware(CanPost::class)->middleware(IsYourPost::class);
+});
 
 Route::get('index', function () {
     return view('layouts.admin.main');
