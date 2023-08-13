@@ -25,7 +25,7 @@ class PostJobRequest extends FormRequest
     {
         return [
             'title'=>'required|min:5',
-            'post_image'=>'required|mimes:png,jpeg,jpg',
+            'post_image'=>'required',
             'description'=>'required|min:10|max:255',
             'roles'=>'required|min:10|max:255',
             'job_type'=>'required',
