@@ -14,6 +14,9 @@ class PostJobController extends Controller
     }
     public function store(PostJobRequest $request)
     {
-        return Post::create($request->all())->with('success','post created successfully');
+        if (Post::create($request->all())) {
+            return redirect('/dashboard')->with('success','post created successfully');
+        }
+        return redirect('/dashboard')->with('warning','somethings went wrong,try again');
     }
 }

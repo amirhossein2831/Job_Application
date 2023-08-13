@@ -29,8 +29,9 @@ class PostJobRequest extends FormRequest
             'description'=>'required|min:10|max:255',
             'roles'=>'required|min:10|max:255',
             'job_type'=>'required',
+            'salary'=>'required|numeric',
             'address'=>'required|min:5',
-            'closingDate'=>'required'
+            'close_date'=>'required'
         ];
     }
 }
