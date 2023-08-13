@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Employee;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\employee\PostJobRequest;
+use App\Models\Post;
 
 class PostJobController extends Controller
 {
@@ -11,8 +12,8 @@ class PostJobController extends Controller
     {
         return view('job.create');
     }
-    public function store(Request $request)
+    public function store(PostJobRequest $request)
     {
-        dd($request->input());
+        return Post::create($request->all())->with('success','post created successfully');
     }
 }
