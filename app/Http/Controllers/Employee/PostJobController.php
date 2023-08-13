@@ -30,10 +30,10 @@ class PostJobController extends Controller
 
     public function edit(Post $post)
     {
-        return view('job.edit',['post'=>$post]);
+        return view('job.edit', ['post' => $post]);
     }
 
-    public function update(Post $post,UpdateJobRequest $request)
+    public function update(Post $post, UpdateJobRequest $request)
     {
         if ($request->hasFile('post_image')) {
             if (Storage::exists('public/' . $post->post_image)) {
@@ -49,6 +49,17 @@ class PostJobController extends Controller
         if ($post->update($data)) {
             return redirect('/dashboard')->with('success', 'the job is updated successfully');
         }
-         return redirect('/dashboard')->with('warning', 'something went wrong tru again');
+        return redirect('/dashboard')->with('warning', 'something went wrong.try again');
+    }
+
+    public function delete(Post $post)
+    {
+        if ($post->delete()) {
+            if (Storage::exists('public/' . $post->post_image)) {
+                Storage::delete('public/' . $post->post_image);
+            }
+            return redirect('/dashboard')->with('success', 'the job is removed successfully');
+        }
+        return redirect('/dashboard')->with('warning', 'something went wrong.try again');
     }
 }
