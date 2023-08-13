@@ -6,6 +6,8 @@
         @include('layouts.admin.sidebar')
     </div>
     <div id="layoutSidenav_content">
+        <x-successes.success-register/>
+        <x-warning.warning-message/>
         @yield('contact')
         @include('layouts.admin.footer')
     </div>
