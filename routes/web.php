@@ -60,7 +60,8 @@ Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
     Route::get('/', [ProfileController::class,'index']);
     Route::get('/update', [ProfileController::class,'edit']);
     Route::patch('/update', [ProfileController::class,'update']);
-
+    Route::get('/changePass', [ProfileController::class,'editPassword']);
+    Route::patch('/changePass', [ProfileController::class,'updatePassword']);
 });
 
 Route::post('/logout',[LogoutController::class,'logout']);
