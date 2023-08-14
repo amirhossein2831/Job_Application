@@ -41,4 +41,14 @@ class ProfileController extends Controller
         }
         return redirect('/')->with('warning', 'something went wrong.try again');
     }
+
+    public function editPassword()
+    {
+
+    }
+
+    public function updatePassword()
+    {
+        
+    }
 }
