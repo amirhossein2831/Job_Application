@@ -13,13 +13,13 @@ body {
 }
 
 .home-content {
-    max-width: 600px;
 }
 
 .home-content h1 {
     font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
+    max-width: 1000px;
     opacity: 0;
     animation: slideRight 1s ease forwards;
     animation-delay: .7s;
@@ -28,21 +28,27 @@ body {
 .home-content h3 {
     font-size: 32px;
     font-weight: 700;
+    max-width: 800px;
     margin-top: -30px;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1s;
 }
 
-.home-content p {
+.home-content p{
     font-size: 16px;
-    margin: 40px 0 40px;
     opacity: 0;
+    max-width: 600px;
     animation: slideLeft 1s ease forwards;
     animation-delay: 1.3s;
 }
+.about{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
 
 .btn-hire {
+    margin-top: 20px;
     position: relative;
     display: inline-flex;
     justify-content: center;
