@@ -16,7 +16,7 @@
             <x-input-field label="Job Image" id="post_image" name="post_image" type="file" value="{{old('post_image')}}"/>
             <div class="form-group mt-3">
                 <label for="">Job Type</label>
-                <x-input-field label="Full Time" id="fullTime" name="fullTime" type="radio" value="checked"></x-input-field>
+                <x-input-field label="Full Time" id="fullTime" name="fullTime" type="radio" value="">checked</x-input-field>
                 <x-input-field label="Part Time" id="partTime" name="partTime" type="radio" value=""/>
                 <x-input-field label="Casual" id="casual" name="casual" type="radio" value=""/>
                 <x-input-field label="Contract" id="contract" name="contract" type="radio" value=""/>
