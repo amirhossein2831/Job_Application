@@ -6,6 +6,7 @@ use App\Http\Controllers\Employee\LoginEmployeeController;
 use App\Http\Controllers\Employee\PostJobController;
 use App\Http\Controllers\Employee\RegisterEmployeeController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\User\LoginUserController;
 use App\Http\Controllers\User\RegisterUserController;
@@ -67,3 +68,6 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     $request->fulfill();
     return redirect('/dashboard')->with('your email verify successfully find your job');
 })->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+Route::get('/profile', [ProfileController::class,'index'])->middleware('auth');
