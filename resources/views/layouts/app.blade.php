@@ -37,7 +37,9 @@
         @endif
         @if(Auth()->check())
             <a class="a" href="/profile">Profile</a>
-            <a class="a" href="/dashboard">Dashboard</a>
+            @if(Auth::user()->user_type === "employee")
+                <a class="a" href="/dashboard">Dashboard</a>
+            @endif
             <a>
                 <button class="brn_login" id="logout">Log out</button>
             </a>
