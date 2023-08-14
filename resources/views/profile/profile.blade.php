@@ -21,6 +21,7 @@
                 <p>Premium End: {{$user->billing_ends}}</p>
             @endif
             <a href="/profile/update" class="btn-hire">Edit Profile</a>
+            <a style="margin-left: 5px" href="/profile/changePass" class="btn-hire">Change Pass</a>
         </div>
         <div class="home-image">
             <div class="glowing-circle">
