@@ -44,11 +44,11 @@ class ProfileController extends Controller
 
     public function editPassword()
     {
-
+        return view('profile.changePassword');
     }
 
     public function updatePassword()
     {
-        
+
     }
 }
