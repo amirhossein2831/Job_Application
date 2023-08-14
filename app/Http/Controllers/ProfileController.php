@@ -3,14 +3,25 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
     public function index()
     {
-        return view('profile', [
-            'user'=> Auth::user()
+        return view('profile.profile', [
+            'user' => Auth::user()
         ]);
+    }
+
+    public function edit()
+    {
+        return view('profile.update', [
+            'user' => Auth::user()
+        ]);
+    }
+
+    public function update()
+    {
+
     }
 }

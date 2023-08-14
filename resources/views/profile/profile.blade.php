@@ -24,10 +24,8 @@
         </div>
         <div class="home-image">
             <div class="glowing-circle">
-                <span></span>
-                <span></span>
                 <div class="image">
-                    <img src="{{\Illuminate\Support\Facades\Storage::url($user->profile_pic ?? 'image/Default-Profile.png')}}" alt="">
+                    <img src="{{\Illuminate\Support\Facades\Storage::url($user->profile_pic ?? 'image/Default-profile.png')}}" alt="">
                 </div>
             </div>
         </div>
