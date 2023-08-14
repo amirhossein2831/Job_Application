@@ -20,7 +20,7 @@
                 <p>Trial End: {{$user->billing_ends}}</p>
                 <p>Premium End: {{$user->billing_ends}}</p>
             @endif
-            <a href="" class="btn-hire">Hire Me</a>
+            <a href="/profile/update" class="btn-hire">Edit Profile</a>
         </div>
         <div class="home-image">
             <div class="glowing-circle">

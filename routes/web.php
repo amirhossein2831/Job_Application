@@ -72,3 +72,6 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 
 
 Route::get('/profile', [ProfileController::class,'index'])->middleware('auth');
+Route::get('/profile/update', [ProfileController::class,'edit'])->middleware('auth');
+Route::patch('/profile/update', [ProfileController::class,'update'])->middleware('auth');
+
