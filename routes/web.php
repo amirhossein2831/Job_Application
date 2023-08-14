@@ -47,6 +47,7 @@ Route::group(['prefix' => 'pay', 'middleware' => ['auth','employee']], function 
 });
 //job group
 Route::group(['prefix' => 'job'], function () {
+    Route::get('/',[PostJobController::class,'show'])->middleware('isPremium');
     Route::get('/create',[PostJobController::class,'index'])->middleware('isPremium');
     Route::post('/create',[PostJobController::class,'store'])->middleware('isPremium');
     Route::get('/edit/{post}',[PostJobController::class,'edit'])->middleware('isPremium',IsYourPost::class);
