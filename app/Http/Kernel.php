@@ -90,7 +90,7 @@ class Kernel extends HttpKernel
         'throttle' => ThrottleRequests::class,
         'verified' => EnsureEmailIsVerified::class,
         'employee' => IsEmployee::class,
-        'loggedIn'=>IsLogin::class,
+        'notLoggedIn'=>IsLogin::class,
         'isPurchased'=>CanPerches::class,
         'isPremium'=>CanPost::class,
     ];
