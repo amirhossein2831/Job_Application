@@ -18,7 +18,7 @@ class PostJobController extends Controller
 
     public function show()
     {
-        $jobs = Auth::user()->posts();
+        $jobs = Auth::user()->posts()->get();
         return view('job.allJob', [
             'jobs' => $jobs,
         ]);
