@@ -1,6 +1,5 @@
 body {
-    background: #0c1022;
-    justify-content: flex-start; /* This is the default value */
+    justify-content: flex-start;
     color: #FFFFFF;
 }
 

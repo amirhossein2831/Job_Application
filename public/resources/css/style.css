@@ -10,7 +10,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
+    padding: 20px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,7 +22,7 @@ body {
     align-items: center;
     min-height: 100vh;
     /*background: url("./../image/background/4.jpg") no-repeat center;*/
-    background: black;
+    background: #0c1022;
     background-size: cover;
 }
 
