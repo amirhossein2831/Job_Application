@@ -7,6 +7,7 @@ use App\Http\Requests\employee\PostJobRequest;
 use App\Http\Requests\employee\UpdateJobRequest;
 use App\Models\Post;
 use Auth;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class PostJobController extends Controller
@@ -61,14 +62,15 @@ class PostJobController extends Controller
         return redirect('/dashboard')->with('warning', 'something went wrong.try again');
     }
 
-    public function delete(Post $post)
+    public function delete(Request $request)
     {
-        if ($post->delete()) {
-            if (Storage::exists('public/' . $post->post_image)) {
-                Storage::delete('public/' . $post->post_image);
+            $post = Post::find($request->input('delete'));
+            if ($post->delete()) {
+                if (Storage::exists('public/' . $post->post_image)) {
+                    Storage::delete('public/' . $post->post_image);
+                }
+                return redirect('/dashboard')->with('success', 'the job is removed successfully');
             }
-            return redirect('/dashboard')->with('success', 'the job is removed successfully');
-        }
         return redirect('/dashboard')->with('warning', 'something went wrong.try again');
     }
 }

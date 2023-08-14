@@ -52,7 +52,7 @@ Route::group(['prefix' => 'job'], function () {
     Route::post('/create',[PostJobController::class,'store'])->middleware('isPremium');
     Route::get('/edit/{post}',[PostJobController::class,'edit'])->middleware('isPremium',IsYourPost::class);
     Route::put('/edit/{post}',[PostJobController::class,'update'])->middleware('isPremium',IsYourPost::class);
-    Route::get('/delete/{post}',[PostJobController::class,'delete'])->middleware('isPremium',IsYourPost::class);
+    Route::delete('/delete',[PostJobController::class,'delete'])->middleware('isPremium',IsYourPost::class);
 });
 Route::post('/logout',[LogoutController::class,'logout']);
 
