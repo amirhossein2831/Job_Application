@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\UpdateProfileRequest;
 use Auth;
+use Hash;
 use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
@@ -47,8 +49,15 @@ class ProfileController extends Controller
         return view('profile.changePassword');
     }
 
-    public function updatePassword()
+    public function updatePassword(ChangePasswordRequest $request)
     {
+        $user = Auth::user();
+        if (Hash::check($request->input('old_password'), $user->password)) {
+            if ($user->update(['password' => $request->input('new_password')])) {
+                return redirect('/')->with('success', 'password change successfully');
+            }
+        }
+        return redirect('profile/changePass')->with('warning', 'the old password in wrong');
 
     }
 }
