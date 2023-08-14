@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('contact')
+    <style>
+        body {
+            justify-content: flex-start;
+        }
+    </style>
     <section class="home">
         <div class="home-content">
             <h1>Hi,I'm {{$user->firstName.' '.$user->lastName}}</h1>
