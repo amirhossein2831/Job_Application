@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\employee\PostJobRequest;
 use App\Http\Requests\employee\UpdateJobRequest;
 use App\Models\Post;
+use Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PostJobController extends Controller
@@ -13,6 +14,14 @@ class PostJobController extends Controller
     public function index()
     {
         return view('job.create');
+    }
+
+    public function show()
+    {
+        $jobs = Auth::user()->posts();
+        return view('job.allJob', [
+            'jobs' => $jobs,
+        ]);
     }
 
     public function store(PostJobRequest $request)
