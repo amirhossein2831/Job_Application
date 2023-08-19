@@ -114,7 +114,8 @@ body {
     border-bottom: 2px solid #FFFFFF;
     margin: 30px 0;
 }
-.is-invalid{
+
+.is-invalid {
     border-bottom: 2px solid red;
 }
 
@@ -145,6 +146,7 @@ body {
 .input-box input:hover ~ label {
     top: -5px;
 }
+
 .stay {
     top: -5px !important;
 }
@@ -203,9 +205,11 @@ body {
     font-weight: 500;
     margin: 25px 0 10px;
 }
-.login-register p{
+
+.login-register p {
     color: #FFFFFF;
 }
+
 .login-register p a {
     color: aqua;
     text-decoration: none;
@@ -248,11 +252,12 @@ body {
 
 .error-text {
     color: #F51212;
-    font-family: "Century Schoolbook L" ,sans-serif;
+    font-family: "Century Schoolbook L", sans-serif;
     font-size: .9em;
     font-weight: bold;
     margin-top: -25px
 }
+
 .close-button {
     position: absolute;
     top: 5px;
@@ -264,11 +269,13 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
-.close-button:hover{
+
+.close-button:hover {
     font-weight: bold;
     font-style: italic;
 }
-.logout-btn{
+
+.logout-btn {
     width: 100px;
     height: 40px;
     border: 1px solid black;
@@ -277,32 +284,40 @@ body {
     left: 10px;
     cursor: pointer;
 }
-.no{
+
+.no {
     background: darkcyan;
     margin-left: 0;
 }
+
 .ok {
     background: orangered;
     margin-left: 100px;
 }
-.no:hover,.ok:hover{
+
+.no:hover, .ok:hover {
     font-style: italic;
     font-weight: bold;
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     backdrop-filter: blur(100px);
 }
-.logout-container div{
+
+.logout-container div {
     margin-top: 15px;
 }
-.help-logout-container{
+
+.help-logout-container {
     margin-top: 5px;
 }
-.logout-container span{
+
+.logout-container span {
     color: #ffffff;
 }
+
 .profile-container {
     margin-bottom: 30px;
 }
+
 .profile-field {
     text-align: left;
     padding: 20px;
@@ -314,13 +329,18 @@ body {
     font-size: 1.3em;
     left: 0;
 }
-.profile-field span{
+
+.profile-field span {
     font-size: 18px;
     font-weight: lighter;
     color: darkgrey;
 }
-.profile-header{
+
+.profile-header {
     margin-top: 15px;
     color: #ffffff;
     font-size: 1.4em;
 }
+
+
+

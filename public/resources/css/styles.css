@@ -155,6 +155,63 @@ h4, .h4 {
   }
 }
 
+.blue-button{
+    color: #FFFFFF;
+    background: #007bff;
+    font-size: 16px;
+    padding: 7px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.blue-button:hover {
+    font-weight: bold;
+    font-style: italic;
+    box-shadow: 0 0 10px rgba(100, 20, 100, .5);
+}
+.black-button{
+    color: #FFFFFF;
+    background: black;
+    font-size: 16px;
+    padding: 7px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.black-button:hover {
+    font-weight: bold;
+    color: #FFFFFF;
+    font-style: italic;
+    box-shadow: 0 0 10px rgba(100, 20, 100, .5);
+}
+.green-button{
+    color: #FFFFFF;
+    background: seagreen;
+    font-size: 16px;
+    padding: 7px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.green-button:hover {
+    font-weight: bold;
+    color: #FFFFFF;
+    font-style: italic;
+    box-shadow: 0 0 10px rgba(100, 20, 100, .5);
+}
+
+
+.red-button{
+    color: #FFFFFF;
+    border-color: #F51212;
+    background: #F51212;
+    font-size: 17px;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+.red-button:hover {
+    font-weight: bold;
+    font-style: italic;
+    box-shadow: 0 0 15px rgba(100, 20, 100, .5);
+}
+
 h5, .h5 {
   font-size: 1.25rem;
 }
