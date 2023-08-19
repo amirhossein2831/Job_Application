@@ -46,9 +46,9 @@
                                 </td>
                                 <td>
                                     @if($applicant->pivot->shortlisted)
-                                        <a class="black-button" href="/job/applicants/unShortlist/{{$post->id}}/{{$applicant->id}}">Remove from shortlist</a>
+                                        <a class="black-button" href="#">Shortlisted</a>
                                     @else
-                                        <a class="green-button" href="/job/applicants/shortlist/{{$post->id}}/{{$applicant->id}}">Add to shortlist</a>
+                                        <a class="green-button" href="/job/applicants/shortlist/{{$post->id}}/{{$applicant->id}}">Shortlist</a>
                                     @endif
                                         <a class="blue-button" style="color: #FFFFFF;background: #007bff;font-size: 16px;padding: 7px 12px;border-radius: 5px;text-decoration: none;" href="/profile/user/{{$applicant->id}}">Profile</a>
                                     <form  style="display: inline"  action="/job/applicants/delete" method="post">

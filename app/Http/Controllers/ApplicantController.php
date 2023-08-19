@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ShortListMail;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Mail;
 
 class ApplicantController extends Controller
 {
@@ -27,10 +29,7 @@ class ApplicantController extends Controller
 
     public function shortlist(Post $post,$userId){
         $post->applicants()->updateExistingPivot($userId, ['shortlisted' => true]);
+        Mail::to(User::find($userId)->email)->queue(new ShortListMail($post));
         return back()->with('success', 'the applicant add to shortlisted successfully');
-    }
-    public function unShortlist(Post $post,$userId){
-        $post->applicants()->updateExistingPivot($userId, ['shortlisted' => false]);
-        return back()->with('success', 'the applicant remove from shortlisted successfully');
     }
 }
