@@ -22,4 +22,11 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function applicants()
+    {
+        return $this->belongsToMany(User::class)
+            ->withPivot('shortlisted')
+            ->withTimestamps();
+    }
 }
