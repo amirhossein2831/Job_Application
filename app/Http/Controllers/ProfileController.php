@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ChangePasswordRequest;
 use App\Http\Requests\UpdateProfileRequest;
+use App\Models\User;
 use Auth;
 use Hash;
 use Illuminate\Support\Facades\Storage;
@@ -13,7 +14,16 @@ class ProfileController extends Controller
     public function index()
     {
         return view('profile.profile', [
-            'user' => Auth::user()
+            'user' => Auth::user(),
+            'isMe' => true,
+        ]);
+    }
+
+    public function showUser(User $user)
+    {
+        return view('profile.profile', [
+            'user' => $user,
+            'isMe' => false,
         ]);
     }
 
