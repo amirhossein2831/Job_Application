@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use Illuminate\Http\Request;
+use App\Models\Post;
 
 class ApplicantController extends Controller
 {
-    public function index()
+    public function index(Post $post)
     {
-        $posts = Auth::user()->posts()->get();
-        dd($posts);
+        $applicants = $post->applicants()->get();
+        return view('job.applicants', [
+            'applicants' => $applicants
+        ]);
     }
 }
