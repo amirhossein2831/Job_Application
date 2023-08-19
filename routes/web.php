@@ -56,7 +56,7 @@ Route::group(['prefix' => 'job','middleware' => 'isPremium'], function () {
     Route::get('/edit/{post}',[PostJobController::class,'edit'])->middleware(IsYourPost::class);
     Route::put('/edit/{post}',[PostJobController::class,'update'])->middleware(IsYourPost::class);
     Route::delete('/delete',[PostJobController::class,'delete'])->middleware(IsYourPost::class);
-    Route::get('/applicants', [ApplicantController::class,'index'])->middleware(IsYourPost::class);
+    Route::get('/applicants/{post}', [ApplicantController::class,'index'])->middleware(IsYourPost::class);
 });
 //profile group
 Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
