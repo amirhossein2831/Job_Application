@@ -27,6 +27,10 @@ class ApplicantController extends Controller
 
     public function shortlist(Post $post,$userId){
         $post->applicants()->updateExistingPivot($userId, ['shortlisted' => true]);
-        return back()->with('success', 'the applicant shortlisted successfully');
+        return back()->with('success', 'the applicant add to shortlisted successfully');
+    }
+    public function unShortlist(Post $post,$userId){
+        $post->applicants()->updateExistingPivot($userId, ['shortlisted' => false]);
+        return back()->with('success', 'the applicant remove from shortlisted successfully');
     }
 }
