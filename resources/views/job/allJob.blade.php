@@ -55,14 +55,14 @@
                                         <td>{{$job->applicants()->count()}}</td>
                                         <td><img style="width: 50px;height: 30px" src="{{\Illuminate\Support\Facades\Storage::url($job->post_image)}}" alt=""></td>
                                         <td>
-                                            <a style="color: #157347;font-size: 16px;padding: 7px 12px;text-decoration: none;background: #dee2e6" href="/job/applicants/{{$job->id}}">Applicants</a>
+                                            <a class="blue-button" href="/job/applicants/{{$job->id}}">Applicants</a>
+                                            <a class="green-button" href="/job/edit/{{$job->id}}">edit</a>
                                             <form  style="display: inline"  action="/job/delete" method="post">
                                                 @csrf
                                                 @method("DELETE")
                                                 <input type="hidden" name="delete" value="{{$job->id}}">
-                                                <button style="border: 8px;height: 30px;color: red;background: #dee2e6" type="submit">Delete</button>
+                                                <button class="red-button" type="submit">Delete</button>
                                             </form>
-                                            <a style="color: dodgerblue;font-size: 16px;padding: 7px 12px;text-decoration: none;background: #dee2e6" href="/job/edit/{{$job->id}}">edit</a>
                                         </td>
                                     </tr>
                                 @endforeach

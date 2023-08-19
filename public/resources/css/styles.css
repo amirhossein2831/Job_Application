@@ -165,6 +165,7 @@ h4, .h4 {
 }
 .blue-button:hover {
     font-weight: bold;
+    color: #FFFFFF;
     font-style: italic;
     box-shadow: 0 0 10px rgba(100, 20, 100, .5);
 }
