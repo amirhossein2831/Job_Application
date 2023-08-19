@@ -65,6 +65,7 @@ Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
     Route::patch('/update', [ProfileController::class,'update']);
     Route::get('/changePass', [ProfileController::class,'editPassword']);
     Route::patch('/changePass', [ProfileController::class,'updatePassword']);
+    Route::get('/user/{user}', [ProfileController::class, 'showUser']);
 });
 
 Route::post('/logout',[LogoutController::class,'logout']);
