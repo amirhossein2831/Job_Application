@@ -21,8 +21,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url("./../image/background/4.jpg") no-repeat center;
-    /*background: #0c1022;*/
+    /*background: url("./../image/background/4.jpg") no-repeat center;*/
+    background: #0c1022;
     background-size: cover;
 }
 
