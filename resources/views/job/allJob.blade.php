@@ -52,6 +52,7 @@
                                         <td>{{$job->close_date}}</td>
                                         <td><img style="width: 50px;height: 30px" src="{{\Illuminate\Support\Facades\Storage::url($job->post_image)}}" alt=""></td>
                                         <td>
+                                            <a style="color: #157347;font-size: 16px;padding: 7px 12px;text-decoration: none;background: #dee2e6" href="/job/applicants/{{$job->id}}">Applicants</a>
                                             <form  style="display: inline"  action="/job/delete" method="post">
                                                 @csrf
                                                 @method("DELETE")
