@@ -37,12 +37,13 @@
                                     <td>{{$applicant->email}}</td>
                                     <td>
                                         <a style="color: #157347;font-size: 16px;padding: 7px 12px;text-decoration: none;background: #dee2e6" href="/profile/user/{{$applicant->id}}">Profile</a>
-{{--                                        <form  style="display: inline"  action="/job/delete" method="post">--}}
-{{--                                            @csrf--}}
-{{--                                            @method("DELETE")--}}
-{{--                                            <input type="hidden" name="delete" value="{{$job->id}}">--}}
-{{--                                            <button style="border: 8px;height: 30px;color: red;background: #dee2e6" type="submit">Delete</button>--}}
-{{--                                        </form>--}}
+                                        <form  style="display: inline"  action="/job/applicants/delete" method="post">
+                                            @csrf
+                                            @method("DELETE")
+                                            <input type="hidden" name="delete" value="{{$post->id}}">
+                                            <input type="hidden" name="user" value="{{$applicant->id}}">
+                                            <button style="border: 8px;height: 30px;color: red;background: #dee2e6" type="submit">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

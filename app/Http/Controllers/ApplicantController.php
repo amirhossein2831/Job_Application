@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class ApplicantController extends Controller
 {
@@ -10,7 +12,16 @@ class ApplicantController extends Controller
     {
         $applicants = $post->applicants()->get();
         return view('job.applicants', [
+            'post' => $post,
             'applicants' => $applicants
         ]);
+    }
+
+    public function deleteUser(Request $request)
+    {
+        $post = Post::find($request->input('delete'));
+        $user = User::find($request->input('user'));
+        $post->applicants()->detach($user);
+        return redirect('/dashboard')->with('success', 'applicant delete successfully');
     }
 }
