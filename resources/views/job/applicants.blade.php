@@ -36,7 +36,7 @@
                                     <td>{{$applicant->lastName}}</td>
                                     <td>{{$applicant->email}}</td>
                                     <td>
-                                        <a style="color: #157347;font-size: 16px;padding: 7px 12px;text-decoration: none;background: #dee2e6" href="#">Profile</a>
+                                        <a style="color: #157347;font-size: 16px;padding: 7px 12px;text-decoration: none;background: #dee2e6" href="/profile/user/{{$applicant->id}}">Profile</a>
 {{--                                        <form  style="display: inline"  action="/job/delete" method="post">--}}
 {{--                                            @csrf--}}
 {{--                                            @method("DELETE")--}}

@@ -14,14 +14,20 @@
             @endif
             <p class="about">About: {{$user->about}}</p>
             <p>Email: {{$user->email}}</p>
-            <p>Account Type: {{$user->user_type}}</p>
+            @if($isMe)
+                <p>Account Type: {{$user->user_type}}</p>
+            @endif
             @if($user->user_type === 'employee')
                 <p>Company: {{$user->company}}</p>
                 <p>Trial End: {{$user->billing_ends}}</p>
                 <p>Premium End: {{$user->billing_ends}}</p>
             @endif
-            <a href="/profile/update" class="btn-hire">Edit Profile</a>
-            <a style="margin-left: 5px" href="/profile/changePass" class="btn-hire">Change Pass</a>
+            @if($isMe)
+                <a href="/profile/update" class="btn-hire">Edit Profile</a>
+                <a style="margin-left: 5px" href="/profile/changePass" class="btn-hire">Change Pass</a>
+            @else
+                <a style="margin-left: 5px" href="mailto:{{$user->email}}" class="btn-hire">Send Email</a>
+            @endif
         </div>
         <div class="home-image">
             <div class="glowing-circle">
