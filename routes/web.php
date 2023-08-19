@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\DashBoarController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Employee\LoginEmployeeController;
@@ -14,6 +15,7 @@ use App\Http\Middleware\IsYourPost;
 use App\Rules\IsEmployee;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
+use PharIo\Manifest\Application;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +56,7 @@ Route::group(['prefix' => 'job','middleware' => 'isPremium'], function () {
     Route::get('/edit/{post}',[PostJobController::class,'edit'])->middleware(IsYourPost::class);
     Route::put('/edit/{post}',[PostJobController::class,'update'])->middleware(IsYourPost::class);
     Route::delete('/delete',[PostJobController::class,'delete'])->middleware(IsYourPost::class);
+    Route::get('/applicants', [ApplicantController::class,'index'])->middleware(IsYourPost::class);
 });
 //profile group
 Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
