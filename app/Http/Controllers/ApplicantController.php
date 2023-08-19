@@ -24,4 +24,9 @@ class ApplicantController extends Controller
         $post->applicants()->detach($user);
         return redirect('/dashboard')->with('success', 'applicant delete successfully');
     }
+
+    public function shortlist(Post $post,$userId){
+        $post->applicants()->updateExistingPivot($userId, ['shortlisted' => true]);
+        return back()->with('success', 'the applicant shortlisted successfully');
+    }
 }
