@@ -60,7 +60,7 @@ Route::group(['prefix' => 'job','middleware' => 'isPremium'], function () {
     Route::delete('/applicants/delete', [ApplicantController::class,'deleteUser'])->middleware(IsYourPost::class);
     Route::get('/applicants/shortlist/{post}/{userId}', [ApplicantController::class,'shortlist'])->middleware(IsYourPost::class);
 });
-//profile group
+//profile group 
 Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
     Route::get('/', [ProfileController::class,'index']);
     Route::get('/update', [ProfileController::class,'edit']);
