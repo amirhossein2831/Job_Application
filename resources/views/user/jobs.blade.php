@@ -5,7 +5,7 @@
             <h4>Recommended Jobs</h4>
 
             <div class="dropdown">
-                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                     Salary
                 </button>
@@ -15,7 +15,7 @@
 
                 </ul>
 
-                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                     Date
                 </button>
@@ -24,7 +24,7 @@
                     <li><a class="dropdown-item" href="#">Oldest</a></li>
                 </ul>
 
-                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                     Job type
                 </button>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="d-flex justify-content-between mt-3"><span style=";color: white;font-size: 20px">${{$job->salary}}</span>
                                 <a href="#">
-                                    <button class="btn btn-dark" >Apply Now</button>
+                                    <button class="btn btn-outline-light" >Apply Now</button>
                                 </a>
                             </div>
                         </div>
@@ -69,17 +69,17 @@
         <div class="row mt-2">
             <div class="col-md-12 d-flex justify-content-center">
                 @if ($jobs->currentPage() > 1)
-                    <a href="{{ $jobs->previousPageUrl()}}" class="btn btn-dark">Previous</a>
+                    <a href="{{ $jobs->previousPageUrl()}}" class="btn btn-outline-light">Previous</a>
                 @endif
                 @if ($jobs->lastPage() > 1)
                     <div class="btn-group" style="margin: 0 5px;">
                         @for ($i = 1; $i <= $jobs->lastPage(); $i++)
-                            <a href="{{ $jobs->url($i) }}" class="btn btn-dark {{ $i == $jobs->currentPage() ? 'active' : '' }}">{{ $i }}</a>
+                            <a href="{{ $jobs->url($i) }}" class="btn btn-outline-light {{ $i == $jobs->currentPage() ? 'active' : '' }} dark">{{ $i }}</a>
                         @endfor
                     </div>
                 @endif
                 @if ($jobs->hasMorePages())
-                    <a href="{{ $jobs->nextPageUrl() }}" class="btn btn-dark">Next</a>
+                    <a href="{{ $jobs->nextPageUrl() }}" class="btn btn-outline-light">Next</a>
                 @endif
             </div>
         </div>
