@@ -6,6 +6,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Employee\LoginEmployeeController;
 use App\Http\Controllers\Employee\PostJobController;
 use App\Http\Controllers\Employee\RegisterEmployeeController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriptionController;
@@ -73,6 +74,7 @@ Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
 Route::post('/logout',[LogoutController::class,'logout']);
 Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth', \App\Http\Middleware\IsEmployee::class);
 Route::get('/', function () {return view('layouts.app');});
+Route::get('/jobs', [JobController::class,'index']);
 Route::get('/email/verify',[EmailController::class,'sendVerification'])->middleware('auth')->name('verification.notice');
 Route::get('/resend/email/verify',[EmailController::class,'reSendVerification'])->middleware('auth');
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
