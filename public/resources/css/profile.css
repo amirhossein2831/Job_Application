@@ -22,7 +22,7 @@ body {
     animation-delay: .7s;
 }
 .jobs {
-    margin-top: 70px;
+    margin-top: 75px;
     height:auto;
     padding: 20px 20px;
     border: 2px solid rgba(255, 255, 255, .5);
@@ -31,6 +31,13 @@ body {
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     animation: slideRight 1s ease forwards;
     animation-delay: .7s;
+}
+.job-card {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(70px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
 }
 
 .home-content h1 {
