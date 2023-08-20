@@ -3,7 +3,6 @@
     <div class="container jobs">
         <div class="d-flex justify-content-between">
             <h4>Recommended Jobs</h4>
-
             <div class="dropdown">
                 <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
