@@ -22,7 +22,9 @@ body {
     animation-delay: .7s;
 }
 .jobs {
-    height: 800px;
+    min-height: auto;
+    margin-top: 70px;
+    height:auto;
     padding: 20px 20px;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
