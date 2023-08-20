@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{asset('/resources/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('/resources/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/profile.css')}}">
 </head>
 <body>
