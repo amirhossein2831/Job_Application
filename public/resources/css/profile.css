@@ -22,7 +22,6 @@ body {
     animation-delay: .7s;
 }
 .jobs {
-    min-height: auto;
     margin-top: 70px;
     height:auto;
     padding: 20px 20px;

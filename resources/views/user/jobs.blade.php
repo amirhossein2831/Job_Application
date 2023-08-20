@@ -65,5 +65,23 @@
                 </div>
             @endforeach
         </div>
+
+        <div class="row mt-2">
+            <div class="col-md-12 d-flex justify-content-center">
+                @if ($jobs->currentPage() > 1)
+                    <a href="{{ $jobs->previousPageUrl()}}" class="btn btn-success">Previous</a>
+                @endif
+                @if ($jobs->lastPage() > 1)
+                    <div class="btn-group" style="margin: 0 5px;">
+                        @for ($i = 1; $i <= $jobs->lastPage(); $i++)
+                            <a href="{{ $jobs->url($i) }}" class="btn btn-success {{ $i == $jobs->currentPage() ? 'active' : '' }}">{{ $i }}</a>
+                        @endfor
+                    </div>
+                @endif
+                @if ($jobs->hasMorePages())
+                    <a href="{{ $jobs->nextPageUrl() }}" class="btn btn-success">Next</a>
+                @endif
+            </div>
+        </div>
     </div>
 @endsection
