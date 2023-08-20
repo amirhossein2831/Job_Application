@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('contact')
-    <div class="container mt-5 jobs">
+    <div class="container jobs">
         <div class="d-flex justify-content-between">
             <h4>Recommended Jobs</h4>
 
@@ -37,24 +37,33 @@
             </div>
         </div>
         <div class="row mt-2 g-1">
-            <div class="col-md-3">
-                <div class="card p-2">
-                    <div class="text-right"><small class="badge text-bg-info">Fulltime</small></div>
-                    <div class="text-center mt-2 p-3"><img class="rounded-circle" src="#" width="100"/> <br>
-                        <span class="d-bl>ock font-weight-bold">Software engineer</span>
-                        <hr>
-                        <span>Amazon</span>
-                        <div class="d-flex flex-row align-items-center justify-content-center">
-                            <small class="ml-1">Melbourne</small>
-                        </div>
-                        <div class="d-flex justify-content-between mt-3"><span>$100000</span>
-                            <a href="#">
-                                <button class="btn btn-dark">Apply Now</button>
-                            </a>
+            @foreach($jobs as $job)
+                <div class="col-md-3">
+                    <div class="card p-1 d-flex flex-column h-100">
+                        <div class="text-right"><small class="badge text-bg-info">{{$job->job_type}}</small></div>
+                        <div class="text-center mt-2 p-3 h-100">
+                            <div style="height: 135px">
+                                <img class="rounded-circle" src="{{\Illuminate\Support\Facades\Storage::url($job->post_image ?? 'image/Default-Profile.png')}}" width="100" height="100" alt="Not loaded"/> <br>
+                                <span class="d-block"
+                                      style="font-weight: bold;color: black;font-size: 23px">{{$job->user->company}}</span>
+                                </div>
+                            <hr style="margin: 0 0;">
+                            <div style="height: 70px">
+                                <span style="color: black;font-weight: bold;font-size: 19px">{{$job->title}}</span><br>
+                                <span style="color: black;font-size: 13px;">{{$job->description}}</span>
+                            </div>
+                            <div style="height: 10px">
+                                <small class="ml-1" style="">Address: {{$job->address}}</small>
+                            </div>
+                            <div class="d-flex justify-content-between mt-3"><span style=";color: black;font-size: 20px">${{$job->salary}}</span>
+                                <a href="#">
+                                    <button class="btn btn-dark">Apply Now</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 @endsection
