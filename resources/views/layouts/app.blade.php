@@ -21,7 +21,9 @@
     <h2 class="logo">Find Job</h2>
     <nav class="navigation">
         <a class="a" href="/">Home</a>
-        <a class="a" href="/contact">Contact</a>
+        @if(Auth::user()->user_type === 'seeker')
+            <a class="a" href="/jobs">Jobs</a>
+        @endif
         <a class="a" href="/about">About</a>
         <a class="a" href="/service">Service</a>
         @if(!Auth()->check())
