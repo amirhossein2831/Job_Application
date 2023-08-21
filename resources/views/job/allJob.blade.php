@@ -1,7 +1,6 @@
 @extends('layouts.admin.main')
 
 @section('contact')
-
     <div id="layoutSidenav_content" style="margin-left: -200px">
         <main>
             <div class="container-fluid px-4">
@@ -12,16 +11,16 @@
                         Your job table
                     </div>
                     <div class="card-body">
-                        <table id="datatablesSimple">
+                        <table class="datatablesSimple" id="datatablesSimple">
                             <thead>
                             <tr>
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Roles</th>
-                                <th>Job Type</th>
+                                <th>JobType</th>
                                 <th>Address</th>
                                 <th>Salary</th>
-                                <th>Close Date</th>
+                                <th>CloseDate</th>
                                 <th>Applicants</th>
                                 <th>Image</th>
                                 <th>Action</th>
@@ -32,14 +31,13 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Roles</th>
-                                <th>Job Type</th>
+                                <th>JobType</th>
                                 <th>Address</th>
                                 <th>Salary</th>
-                                <th>Close Date</th>
+                                <th>CloseDate</th>
                                 <th>Applicants</th>
                                 <th>Image</th>
                                 <th>Action</th>
-
                             </tr>
                             </tfoot>
                             <tbody>
@@ -50,12 +48,12 @@
                                         <td>{{$job->roles}}</td>
                                         <td>{{$job->job_type}}</td>
                                         <td>{{$job->address}}</td>
-                                        <td>{{$job->salary}}</td>
+                                        <td>${{$job->salary}}</td>
                                         <td>{{$job->close_date}}</td>
                                         <td>{{$job->applicants()->count()}}</td>
                                         <td><img style="width: 50px;height: 30px" src="{{\Illuminate\Support\Facades\Storage::url($job->post_image)}}" alt=""></td>
                                         <td>
-                                            <a class="blue-button" href="/job/applicants/{{$job->id}}">Applicants</a>
+                                            <a class="blue-button" href="/job/applicants/{{$job->id}}">applicant</a>
                                             <a class="green-button" href="/job/edit/{{$job->id}}">edit</a>
                                             <form  style="display: inline"  action="/job/delete" method="post">
                                                 @csrf
