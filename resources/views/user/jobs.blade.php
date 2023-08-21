@@ -9,16 +9,16 @@
                     Salary
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="?salary=high&{{ http_build_query(request()->except('salary')) }}">High to low</a></li>
-                    <li><a class="dropdown-item" href="?salary=low&{{ http_build_query(request()->except('salary')) }}">Low to high</a></li>
+                    <li><a class="dropdown-item" href="?salary=high&{{ http_build_query(request()->except('salary','date')) }}">High to low</a></li>
+                    <li><a class="dropdown-item" href="?salary=low&{{ http_build_query(request()->except('salary','date')) }}">Low to high</a></li>
                 </ul>
 
                 <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Date
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="?date=latest&{{ http_build_query(request()->except('date')) }}">Latest</a></li>
-                    <li><a class="dropdown-item" href="?date=oldest&{{ http_build_query(request()->except('date')) }}">Oldest</a></li>
+                    <li><a class="dropdown-item" href="?date=latest&{{ http_build_query(request()->except('date','salary')) }}">Latest</a></li>
+                    <li><a class="dropdown-item" href="?date=oldest&{{ http_build_query(request()->except('date','salary')) }}">Oldest</a></li>
                 </ul>
 
                 <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

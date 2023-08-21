@@ -15,21 +15,12 @@ class JobController extends Controller
         $jobType = $request->query('jobType');
         $date = $request->query('date');
         $salary = $request->query('salary');
-        if ($jobType) {
-            $posts->where('job_type', $jobType);
-        }
 
-        if ($date === 'latest') {
-            $posts->orderBy('created_at', 'desc');
-        } elseif ($date === 'oldest') {
-            $posts->orderBy('created_at', 'asc');
-        }
+        $posts = $jobType ? $posts->where('job_type', $jobType) : $posts;
 
-        if ($salary === 'high') {
-            $posts->orderBy('salary', 'desc');
-        } elseif ($salary === 'low') {
-            $posts->orderBy('salary', 'asc');
-        }
+        $posts = $date === 'latest' ? $posts->orderBy('created_at', 'desc') : ($date === 'oldest' ? $posts->orderBy('created_at') : $posts);
+
+        $posts = $salary === 'high' ? $posts->orderBy('salary', 'desc') : ($salary === 'low' ? $posts->orderBy('salary') : $posts);
 
         $posts = $posts->with('user')->paginate(8)->appends($request->query());
 
