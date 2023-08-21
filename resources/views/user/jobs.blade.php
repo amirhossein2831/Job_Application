@@ -38,19 +38,21 @@
                     <div class="card p-1 d-flex flex-column h-100 job-card">
                         <div class="text-right"><small class="badge text-bg-info">{{$job->job_type}}</small></div>
                         <div class="text-center mt-2 p-3 h-100">
-                            <div style="height: 135px">
-                                <img class="rounded-circle" src="{{\Illuminate\Support\Facades\Storage::url($job->post_image ?? 'image/Default-Profile.png')}}" width="100" height="100" alt="Not loaded"/> <br>
-                                <span class="d-block"
-                                      style="font-weight: bold;color: white;font-size: 23px">{{$job->user->company}}</span>
+                            <a href="jobs/{{$job->id}}" style="text-decoration: none">
+                                <div style="height: 135px">
+                                    <img class="rounded-circle" src="{{\Illuminate\Support\Facades\Storage::url($job->post_image ?? 'image/Default-Profile.png')}}" width="100" height="100" alt="Not loaded"/> <br>
+                                    <span class="d-block"
+                                          style="font-weight: bold;color: white;font-size: 23px">{{$job->user->company}}</span>
+                                    </div>
+                                <hr style="margin: 0 0;">
+                                <div style="height: 70px">
+                                    <span style="color: white;font-weight: bold;font-size: 19px">{{$job->title}}</span><br>
+                                    <span style="color: white;font-size: 13px;">{{$job->description}}</span>
                                 </div>
-                            <hr style="margin: 0 0;">
-                            <div style="height: 70px">
-                                <span style="color: white;font-weight: bold;font-size: 19px">{{$job->title}}</span><br>
-                                <span style="color: white;font-size: 13px;">{{$job->description}}</span>
-                            </div>
-                            <div style="height: 10px">
-                                <small class="ml-1" style="color: white">Address: {{$job->address}}</small>
-                            </div>
+                                <div style="height: 10px">
+                                    <small class="ml-1" style="color: white">Address: {{$job->address}}</small>
+                                </div>
+                            </a>
                             <div class="d-flex justify-content-between mt-3"><span style=";color: white;font-size: 20px">${{$job->salary}}</span>
                                 <a href="#">
                                     <button class="btn btn-outline-light" >Apply Now</button>
