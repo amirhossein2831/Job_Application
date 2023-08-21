@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateProfileRequest;
 use App\Models\User;
 use Auth;
 use Hash;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
@@ -37,17 +38,24 @@ class ProfileController extends Controller
     public function update(UpdateProfileRequest $request)
     {
         $user = Auth::user();
+        $data = $request->except('profile_pic', 'resume');
         if ($request->hasFile('profile_pic')) {
             if (Storage::exists('public/' . $user->profile_pic)) {
                 Storage::delete('public/' . $user->profile_pic);
             }
-            $path = $request->file('profile_pic')->store('image', 'public');
-            $relativePath = str_replace('public/', '', $path);
-            $data = $request->except('profile_pic');
-            $data['profile_pic'] = $relativePath;
-        } else {
-            $data = $request->except('profile_pic');
+            $proPath = $request->file('profile_pic')->store('image', 'public');
+            $profilePath = str_replace('public/', '', $proPath);
+            $data['profile_pic'] = $profilePath;
         }
+        if ($request->hasFile('resume')) {
+            if (Storage::exists('public/' . $user->resume)) {
+                Storage::delete('public/' . $user->resume);
+            }
+            $resPath = $request->file('resume')->store('image', 'public');
+            $resumePath = str_replace('public/', '', $resPath);
+            $data['resume'] = $resumePath;
+        }
+
         if ($user->update($data)) {
             return redirect('/')->with('success', 'the profile is updated successfully');
         }
