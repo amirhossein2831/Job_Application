@@ -75,6 +75,7 @@ Route::post('/logout',[LogoutController::class,'logout']);
 Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth', \App\Http\Middleware\IsEmployee::class);
 Route::get('/', function () {return view('layouts.app');});
 Route::get('/jobs', [JobController::class,'index']);
+Route::get('/jobs/{job}',[JobController::class,'show']);
 Route::get('/email/verify',[EmailController::class,'sendVerification'])->middleware('auth')->name('verification.notice');
 Route::get('/resend/email/verify',[EmailController::class,'reSendVerification'])->middleware('auth');
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
