@@ -31,7 +31,9 @@ class JobController extends Controller
 
     public function show(Post $job)
     {
-        dd($job->id);
+        return view('job.job',[
+            'job'=>$job
+        ]);
 
     }
 }
