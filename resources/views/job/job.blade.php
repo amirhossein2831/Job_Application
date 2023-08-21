@@ -8,7 +8,8 @@
                          style="height: 150px; object-fit: cover;">
                     <div class="card-body">
                         <h2 class="card-title">Job Title</h2>
-                        <span class="badge bg-primary">Full-time</span>
+                        <p>this job provide from  <span class="badge bg-gradient">{{$job->user->company}}</span></p>
+                        <p>Job Type: <span class="badge bg-primary">Full-time</span></p>
                         <p>Salary: </p>
                         <p>Address: </p>
                         <h4 class="mt-4">Description</h4>
