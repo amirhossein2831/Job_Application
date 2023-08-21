@@ -98,6 +98,21 @@ body {
     animation: slideTop 1s ease forwards;
     animation-delay: 1.5s;
 }
+.description-container {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.address-container {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 7px;
+    margin-left: 10px
+}
 
 .btn-hire::before {
     content: '';
