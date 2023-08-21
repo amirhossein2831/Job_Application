@@ -28,10 +28,10 @@
                     Job type
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Fulltime</a></li>
-                    <li><a class="dropdown-item" href="#">Parttime</a></li>
-                    <li><a class="dropdown-item" href="#">Casual</a></li>
-                    <li><a class="dropdown-item" href="#">Contract</a></li>
+                    <li><a class="dropdown-item" href="/jobs?jobType=fullTime">Fulltime</a></li>
+                    <li><a class="dropdown-item" href="/jobs?jobType=partTime">Parttime</a></li>
+                    <li><a class="dropdown-item" href="/jobs?jobType=casual">Casual</a></li>
+                    <li><a class="dropdown-item" href="/jobs?jobType=contract">Contract</a></li>
                 </ul>
             </div>
         </div>

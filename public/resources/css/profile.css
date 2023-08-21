@@ -29,8 +29,6 @@ body {
     border-radius: 20px;
     backdrop-filter: blur(50px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    animation: slideRight 1s ease forwards;
-    animation-delay: .7s;
 }
 .job-card {
     background: transparent;
