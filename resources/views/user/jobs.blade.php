@@ -2,36 +2,33 @@
 @section('contact')
     <div class="container jobs">
         <div class="d-flex justify-content-between">
-            <h4>Recommended Jobs</h4>
+            <h4><a href="/jobs" style="color: white;text-decoration: none">Recommended Jobs</a></h4>
             <div class="dropdown">
                 <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                     Salary
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">High to low</a></li>
-                    <li><a class="dropdown-item" href="#">Low to high</a></li>
-
+                    <li><a class="dropdown-item" href="?salary=high&{{ http_build_query(request()->except('salary')) }}">High to low</a></li>
+                    <li><a class="dropdown-item" href="?salary=low&{{ http_build_query(request()->except('salary')) }}">Low to high</a></li>
                 </ul>
 
-                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Date
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Latest</a></li>
-                    <li><a class="dropdown-item" href="#">Oldest</a></li>
+                    <li><a class="dropdown-item" href="?date=latest&{{ http_build_query(request()->except('date')) }}">Latest</a></li>
+                    <li><a class="dropdown-item" href="?date=oldest&{{ http_build_query(request()->except('date')) }}">Oldest</a></li>
                 </ul>
 
-                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Job type
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/jobs?jobType=fullTime">Fulltime</a></li>
-                    <li><a class="dropdown-item" href="/jobs?jobType=partTime">Parttime</a></li>
-                    <li><a class="dropdown-item" href="/jobs?jobType=casual">Casual</a></li>
-                    <li><a class="dropdown-item" href="/jobs?jobType=contract">Contract</a></li>
+                    <li><a class="dropdown-item" href="?jobType=fullTime&{{ http_build_query(request()->except('jobType')) }}">Fulltime</a></li>
+                    <li><a class="dropdown-item" href="?jobType=partTime&{{ http_build_query(request()->except('jobType')) }}">Parttime</a></li>
+                    <li><a class="dropdown-item" href="?jobType=casual&{{ http_build_query(request()->except('jobType')) }}">Casual</a></li>
+                    <li><a class="dropdown-item" href="?jobType=contract&{{ http_build_query(request()->except('jobType')) }}">Contract</a></li>
                 </ul>
             </div>
         </div>
