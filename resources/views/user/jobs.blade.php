@@ -1,5 +1,14 @@
 @extends('layouts.app')
 @section('contact')
+    <style>
+        .description-container {
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Limit to 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+
     <div class="container jobs">
         <div class="d-flex justify-content-between">
             <h4><a href="/jobs" style="color: white;text-decoration: none">Recommended Jobs</a></h4>
@@ -47,9 +56,11 @@
                                 <hr style="margin: 0 0;">
                                 <div style="height: 70px">
                                     <span style="color: white;font-weight: bold;font-size: 19px">{{$job->title}}</span><br>
-                                    <span style="color: white;font-size: 13px;">{{$job->description}}</span>
+                                    <div class="description-container">
+                                        <span style="color: white;font-size: 13px;">{{$job->description}}</span>
+                                    </div>
                                 </div>
-                                <div style="height: 10px">
+                                <div class="description-container" style="-webkit-line-clamp: 1;text-align: left;margin-top: 7px;margin-left: 10px">
                                     <small class="ml-1" style="color: white">Address: {{$job->address}}</small>
                                 </div>
                             </a>
