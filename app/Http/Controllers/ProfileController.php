@@ -78,4 +78,16 @@ class ProfileController extends Controller
         return redirect('profile/changePass')->with('warning', 'the old password in wrong');
 
     }
+
+    public function downloadResume($fileName){
+        $filePath = 'image/' . $fileName; // Construct the correct path
+        $fileContents = Storage::disk('public')->get($filePath);
+        $mimeType = Storage::disk('public')->mimeType($filePath);
+
+        return new Response($fileContents, 200, [
+            'Content-Type' => $mimeType,
+            'Content-Disposition' => 'attachment; filename="' . $fileName . '"',
+        ]);
+
+    }
 }
