@@ -28,4 +28,10 @@ class JobController extends Controller
             'jobs' => $posts,
         ]);
     }
+
+    public function show(Post $job)
+    {
+        dd($job->id);
+
+    }
 }
