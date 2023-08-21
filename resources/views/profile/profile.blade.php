@@ -9,9 +9,6 @@
     <section class="home">
         <div class="home-content">
             <h1>Hi,I'm {{$user->firstName.' '.$user->lastName}}</h1>
-            @if($user->user_type === 'seeker')
-                <h3>Resume: {{$user->resume}}</h3>
-            @endif
             <p class="about">About: {{$user->about}}</p>
             <p>Email: {{$user->email}}</p>
             @if($isMe)
@@ -27,6 +24,7 @@
                 <a style="margin-left: 5px" href="/profile/changePass" class="btn-hire">Change Pass</a>
             @else
                 <a style="margin-left: 5px" href="mailto:{{$user->email}}" class="btn-hire">Send Email</a>
+                <a style="margin-left: 5px;width: 220px" href="/job/applicants/resume/{{$user->resume}}" class="btn-hire">Download Resume</a>
             @endif
         </div>
         <div class="home-image">
