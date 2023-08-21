@@ -31,9 +31,9 @@ class JobController extends Controller
 
     public function show(Post $job)
     {
+        $job = $job->with('user')->first();
         return view('job.job',[
             'job'=>$job
         ]);
-
     }
 }
