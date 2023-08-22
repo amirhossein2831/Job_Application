@@ -20,8 +20,16 @@
                 <h4>Roles and Responsibilities</h4>
                 {{$job->roles}}
                 <p class="card-text mt-4">Application closing date: {{$job->close_date}}</p>
-
-                <a href="#" class="btn btn-outline-light mt-3">Apply Now</a>
+                @if($job->applicants()->find(Auth::id()))
+                    <button style="padding: 10px;background: rgb(255,255,255,.2);border-radius: 10px;border-color: black" >Applied</button>
+                @else
+                    <form action="/job/apply" method="post">
+                        @csrf
+                        <input type="hidden" name="post" value="{{$job->id}}">
+                        <input type="hidden" name="user" value="{{Auth::id()}}">
+                        <button type="submit" class="btn btn-outline-light" >Apply Now</button>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

@@ -56,9 +56,16 @@
                                 </div>
                             </a>
                             <div class="d-flex justify-content-between mt-3"><span style=";color: white;font-size: 20px">${{$job->salary}}</span>
-                                <a href="#">
-                                    <button class="btn btn-outline-light" >Apply Now</button>
-                                </a>
+                                @if($job->applicants()->find(Auth::id()))
+                                    <button style="padding: 10px;background: rgb(255,255,255,.2);border-radius: 10px;border-color: black" >Applied</button>
+                                @else
+                                    <form action="/job/apply" method="post">
+                                        @csrf
+                                        <input type="hidden" name="post" value="{{$job->id}}">
+                                        <input type="hidden" name="user" value="{{Auth::id()}}">
+                                        <button type="submit" class="btn btn-outline-light" >Apply Now</button>
+                                    </form>
+                                @endif
                             </div>
                         </div>
                     </div>
