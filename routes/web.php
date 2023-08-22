@@ -65,7 +65,6 @@ Route::group(['prefix' => 'job','middleware' => 'isPremium'], function () {
 });
 //profile group
 Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
-    Route::get('/', [ProfileController::class,'index']);
     Route::get('/update', [ProfileController::class,'edit']);
     Route::patch('/update', [ProfileController::class,'update']);
     Route::get('/changePass', [ProfileController::class,'editPassword']);
@@ -75,7 +74,9 @@ Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
 
 Route::post('/logout',[LogoutController::class,'logout']);
 Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth', \App\Http\Middleware\IsEmployee::class);
-Route::get('/', function () {return view('layouts.app');});
+Route::get('/', function () {return view('home');});
+Route::get('/home', function () {return view('home');});
+Route::get('/about', function () {return view('about');});
 Route::get('/jobs', [JobController::class,'index']);
 Route::get('/jobs/{job}',[JobController::class,'show']);
 Route::get('/email/verify',[EmailController::class,'sendVerification'])->middleware('auth')->name('verification.notice');

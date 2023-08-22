@@ -20,7 +20,7 @@
     <h2 class="logo">Find Job</h2>
     <nav class="navigation">
         @if(!Auth::check())
-            <a class="a" href="/">Home</a>
+            <a class="a" href="/home">Home</a>
         @endif
         @if(Auth::check() && Auth::user()->user_type === 'seeker')
             <a class="a" href="/jobs">Jobs</a>
