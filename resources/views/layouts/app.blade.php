@@ -19,12 +19,12 @@
 <header>
     <h2 class="logo">Find Job</h2>
     <nav class="navigation">
-        <a class="a" href="/">Home</a>
+        @if(!Auth::check())
+            <a class="a" href="/">Home</a>
+        @endif
         @if(Auth::check() && Auth::user()->user_type === 'seeker')
             <a class="a" href="/jobs">Jobs</a>
         @endif
-        <a class="a" href="/about">About</a>
-        <a class="a" href="/service">Service</a>
         @if(!Auth()->check())
             <a href="/login/employee">
                 <button class="brn_login" style="width: 150px">Employee Login</button>
@@ -34,17 +34,19 @@
             </a>
         @endif
         @if(Auth()->check() && Auth::user()->user_type === "employee" )
-            <a class="a " href="/pay/subscription">subscribe</a>         {{-- need two handle active page--}}
         @endif
         @if(Auth()->check())
             <a class="a" href="/profile">Profile</a>
             @if(Auth::user()->user_type === "employee")
                 <a class="a" href="/dashboard">Dashboard</a>
             @endif
+            <a class="a " href="/pay/subscription">subscribe</a>
+            <a class="a" href="/about">About</a>
             <a>
                 <button class="brn_login" id="logout">Log out</button>
             </a>
         @endif
+
         <form action="/logout" id="logoutForm" method="post">@csrf</form>
     </nav>
 </header>
