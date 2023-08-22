@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{asset('/resources/css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('/resources/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('/resources/css/profile.css')}}">
 </head>
 <body>
@@ -21,7 +20,9 @@
     <h2 class="logo">Find Job</h2>
     <nav class="navigation">
         <a class="a" href="/">Home</a>
-        <a class="a" href="/contact">Contact</a>
+        @if(Auth::check() && Auth::user()->user_type === 'seeker')
+            <a class="a" href="/jobs">Jobs</a>
+        @endif
         <a class="a" href="/about">About</a>
         <a class="a" href="/service">Service</a>
         @if(!Auth()->check())

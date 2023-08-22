@@ -16,11 +16,12 @@
                 @if($user->user_type === 'employee')
                     <x-field field-name="company" type="text" label="Company Name" icon-name="build" value="{{$user->company}}"/>
                 @else
-                    <x-field field-name="resume" type="text" icon-name="person" label="Resume" value="{{$user->resume}}"/>
+                    <input style="margin-top: 10px;cursor: pointer;margin-bottom: 30px" name="resume" type="file" value="">
+                    <label>Resume Image</label>
                 @endif
 
                 <input style="margin-top: 10px;cursor: pointer;margin-bottom: 30px" name="profile_pic" type="file" value="">
-                <label>Profile Image</label>
+                <label>Profile Image &nbsp&nbsp</label>
 
                 <button type="submit" id="register-btn" class="button">Update</button>
             </form>
