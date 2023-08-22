@@ -4,10 +4,20 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Post;
+use App\Models\User;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 
 class JobController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return Application|Factory|View
+     */
     public function index(Request $request)
     {
         $posts = Post::where('close_date', '>', now()->format('Y-m-d'));
@@ -29,11 +39,30 @@ class JobController extends Controller
         ]);
     }
 
-    public function show(Post $job)
+    /**
+     * @param $job
+     * @return Application|Factory|View
+     */
+    public function show($job)
     {
-        $job = $job->with('user')->first();
-        return view('job.job',[
-            'job'=>$job
+        $job = Post::with('user')->where('id', $job)->first();
+        return view('job.job', [
+            'job' => $job
         ]);
+    }
+
+    /**
+     * @param Request $request
+     * @return Application|RedirectResponse|Redirector
+     */
+    public function apply(Request $request)
+    {
+        $post = Post::find($request->input('post'));
+        if (!$post->applicants->find($request->input('user'))) {
+            $user = User::find($request->input('user'));
+            $post->applicants()->attach($user);
+            return redirect('/')->with('success', 'You applying for the jub successfully');
+        }
+        return redirect('/')->with('warning', 'You already applied for this jub');
     }
 }
