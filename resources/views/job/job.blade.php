@@ -26,7 +26,6 @@
                     <form action="/job/apply" method="post">
                         @csrf
                         <input type="hidden" name="post" value="{{$job->id}}">
-                        <input type="hidden" name="user" value="{{Auth::id()}}">
                         <button type="submit" class="btn btn-outline-light" >Apply Now</button>
                     </form>
                 @endif

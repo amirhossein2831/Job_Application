@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
+use Auth;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -58,8 +59,8 @@ class JobController extends Controller
     public function apply(Request $request)
     {
         $post = Post::find($request->input('post'));
-        if (!$post->applicants->find($request->input('user'))) {
-            $user = User::find($request->input('user'));
+        if (!$post->applicants->find(Auth::id())) {
+            $user = User::find(Auth::id());
             $post->applicants()->attach($user);
             return redirect('/')->with('success', 'You applying for the jub successfully');
         }
