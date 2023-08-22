@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\ApplyMail;
 use App\Models\Post;
 use App\Models\User;
 use Auth;
@@ -12,6 +13,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Mail;
 
 class JobController extends Controller
 {
@@ -58,10 +60,11 @@ class JobController extends Controller
      */
     public function apply(Request $request)
     {
-        $post = Post::find($request->input('post'));
+        $post = Post::with('user')->find($request->input('post'));
         if (!$post->applicants->find(Auth::id())) {
             $user = User::find(Auth::id());
             $post->applicants()->attach($user);
+            Mail::to($post->user->email)->queue(new ApplyMail(Auth::user()->firstName . ' ' . Auth::user()->lastName, $post->title, now()->format("Y-m-d H:i:s")));
             return redirect('/')->with('success', 'You applying for the jub successfully');
         }
         return redirect('/')->with('warning', 'You already applied for this jub');
