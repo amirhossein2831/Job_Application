@@ -12,7 +12,6 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse as RedirectResponseAlias;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
 use Mail;
 
 class JobController extends Controller

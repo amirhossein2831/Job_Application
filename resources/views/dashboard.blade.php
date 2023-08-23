@@ -1,7 +1,5 @@
 @extends('layouts.admin.main')
 @section('contact')
-    <x-successes.success-register/>
-    <x-warning.warning-message/>
     <main>
         <div class="container-fluid px-4">
             <h1 class="mt-4">Dashboard</h1>

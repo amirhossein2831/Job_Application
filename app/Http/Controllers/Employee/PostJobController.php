@@ -33,9 +33,9 @@ class PostJobController extends Controller
         $data['post_image'] = $relativePath;
 
         if (Post::create($data)) {
-            return redirect('/dashboard')->with('success', 'Post created successfully');
+            return redirect('/job')->with('success', 'Post created successfully');
         }
-        return redirect('/dashboard')->with('warning', 'somethings went wrong,try again');
+        return redirect('/job')->with('warning', 'somethings went wrong,try again');
     }
 
     public function edit(Post $post)
@@ -57,9 +57,9 @@ class PostJobController extends Controller
             $data = $request->except('post_image');
         }
         if ($post->update($data)) {
-            return redirect('/dashboard')->with('success', 'the job is updated successfully');
+            return redirect('/job')->with('success', 'the job is updated successfully');
         }
-        return redirect('/dashboard')->with('warning', 'something went wrong.try again');
+        return redirect('/job')->with('warning', 'something went wrong.try again');
     }
 
     public function delete(Request $request)
@@ -69,8 +69,8 @@ class PostJobController extends Controller
                 if (Storage::exists('public/' . $post->post_image)) {
                     Storage::delete('public/' . $post->post_image);
                 }
-                return redirect('/dashboard')->with('success', 'the job is removed successfully');
+                return back()->with('success', 'the job is removed successfully');
             }
-        return redirect('/dashboard')->with('warning', 'something went wrong.try again');
+        return back()->with('warning', 'something went wrong.try again');
     }
 }
