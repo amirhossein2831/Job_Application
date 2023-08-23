@@ -18,10 +18,9 @@ class LoginUserController extends Controller
         if (Auth::attempt($credential)) {
             $user = Auth::user();
             if ($user->hasVerifiedEmail()) {
-                return redirect('/');
+                return redirect('/jobs');
             }
             return redirect()->route('verification.notice');
-
         }
         return redirect('/login/seeker')->withErrors(['password'=>'the password is wrong']);
     }
