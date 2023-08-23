@@ -24,6 +24,56 @@ class JobController extends Controller
     {
         $posts = Post::where('close_date', '>', now()->format('Y-m-d'));
 
+        return $this->filterJobs($request, $posts);
+    }
+
+    public function appliedJobs(Request $request)
+    {
+        $posts = Auth::user()->jobs();
+
+        return $this->filterJobs($request, $posts);
+    }
+
+    /**
+     * @param $job
+     * @return Application|Factory|View
+     */
+    public function show($job)
+    {
+        $job = Post::with('user')->where('id', $job)->first();
+        return view('job.job', [
+            'job' => $job
+        ]);
+    }
+
+    public function jobsOfCompany($company)
+    {
+        return view('employee.company-profile');
+    }
+
+    /**
+     * @param Request $request
+     * @return RedirectResponseAlias
+     */
+    public function apply(Request $request)
+    {
+        $post = Post::with('user')->find($request->input('post'));
+        if (!$post->applicants->find(Auth::id())) {
+            $user = User::find(Auth::id());
+            $post->applicants()->attach($user);
+            Mail::to($post->user->email)->queue(new ApplyMail(Auth::user()->firstName . ' ' . Auth::user()->lastName, $post->title, now()->format("Y-m-d H:i:s")));
+            return back()->with('success', 'You applying for the jub successfully');
+        }
+        return back()->with('warning', 'You already applied for this jub');
+    }
+
+    /**
+     * @param Request $request
+     * @param $posts
+     * @return Application|Factory|View
+     */
+    public function filterJobs(Request $request,$posts): Application|Factory|View
+    {
         $jobType = $request->query('jobType');
         $date = $request->query('date');
         $salary = $request->query('salary');
@@ -41,33 +91,4 @@ class JobController extends Controller
         ]);
     }
 
-    /**
-     * @param $job
-     * @return Application|Factory|View
-     */
-    public function show($job)
-    {
-        $job = Post::with('user')->where('id', $job)->first();
-        return view('job.job', [
-            'job' => $job
-        ]);
-    }
-    public function jobsOfCompany($company){
-        return view('employee.company-profile');
-    }
-    /**
-     * @param Request $request
-     * @return RedirectResponseAlias
-     */
-    public function apply(Request $request)
-    {
-        $post = Post::with('user')->find($request->input('post'));
-        if (!$post->applicants->find(Auth::id())) {
-            $user = User::find(Auth::id());
-            $post->applicants()->attach($user);
-            Mail::to($post->user->email)->queue(new ApplyMail(Auth::user()->firstName . ' ' . Auth::user()->lastName, $post->title, now()->format("Y-m-d H:i:s")));
-            return back()->with('success', 'You applying for the jub successfully');
-        }
-        return back()->with('warning', 'You already applied for this jub');
-    }
 }
