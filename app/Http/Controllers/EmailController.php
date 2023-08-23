@@ -12,7 +12,10 @@ class EmailController
         if (!$user->hasVerifiedEmail()) {
             return view('needVerify')->with('success', 'email verification send successfully');
         }
-        return redirect('/jobs');
+        if ($user->user_type === 'seeker') {
+            return redirect('/jobs');
+        }
+        return redirect('/dashboard');
     }
 
     public function reSendVerification()

@@ -20,7 +20,7 @@ class LoginEmployeeController extends Controller
         if (Auth::attempt($credential)) {
             $user = Auth::user();
             if ($user->hasVerifiedEmail()) {
-                return redirect('/');
+                return redirect('/dashboard');
             }
             return redirect()->route('verification.notice');
         }

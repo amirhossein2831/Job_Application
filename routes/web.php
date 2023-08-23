@@ -43,14 +43,14 @@ Route::group(['prefix' => 'register','middleware' => 'notLoggedIn'], function ()
     Route::post('/employee',[RegisterEmployeeController::class,'store']);
 });
 //pay group
-Route:: group(['prefix' => 'pay', 'middleware' => ['auth','employee','isPurchased']], function () {
+Route:: group(['prefix' => 'pay', 'middleware' => ['auth','verified','employee','isPurchased']], function () {
     Route::get('subscription', [SubscriptionController::class, 'index'])->withoutMiddleware('isPurchased');
     Route::get('weekly',[SubscriptionController::class,'weeklySubscribe']);
     Route::get('monthly',[SubscriptionController::class,'monthlySubscribe']);
     Route::get('yearly',[SubscriptionController::class,'yearlySubscribe']);
 });
 //job group
-Route::group(['prefix' => 'job','middleware' => 'isPremium'], function () {
+Route::group(['prefix' => 'job','middleware' => ['auth','verified','isPremium']], function () {
     Route::get('/',[PostJobController::class,'show']);
     Route::get('/create',[PostJobController::class,'index']);
     Route::post('/create',[PostJobController::class,'store']);
@@ -61,7 +61,7 @@ Route::group(['prefix' => 'job','middleware' => 'isPremium'], function () {
     Route::delete('/applicants/delete', [ApplicantController::class,'deleteUser'])->middleware(IsYourPost::class);
     Route::get('/applicants/shortlist/{post}/{userId}', [ApplicantController::class,'shortlist'])->middleware(IsYourPost::class);
     Route::get('/applicants/resume/image/{resume}',[ProfileController::class,'downloadResume']);
-    Route::post('/apply', [JobController::class, 'apply']);
+    Route::post('/apply', [JobController::class, 'apply'])->withoutMiddleware('isPremium');
 });
 //profile group
 Route::group(['prefix' => 'profile','middleware' => ['auth','verified']], function () {
@@ -73,13 +73,13 @@ Route::group(['prefix' => 'profile','middleware' => ['auth','verified']], functi
     Route::get('/user/{user}', [ProfileController::class, 'showUser']);
 });
 
-Route::post('/logout',[LogoutController::class,'logout'])->middleware('auth');
-Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth','employee');
 Route::get('/', function () {return view('home');});
 Route::get('/home', function () {return view('home');});
-Route::get('/about', function () {return view('about');});
+Route::get('/about', function () {return view('about');})->middleware('auth','verified');
+Route::post('/logout',[LogoutController::class,'logout'])->middleware('auth');
+Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth','employee');
 Route::get('/jobs', [JobController::class,'index'])->middleware('auth','verified');
-Route::get('/jobs/{job}',[JobController::class,'show']);
+Route::get('/jobs/{job}',[JobController::class,'show'])->middleware('auth','verified');
 Route::get('/email/verify',[EmailController::class,'sendVerification'])->middleware('auth')->name('verification.notice');
 Route::get('/resend/email/verify',[EmailController::class,'reSendVerification'])->middleware('auth');
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
