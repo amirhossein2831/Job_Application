@@ -64,7 +64,7 @@ Route::group(['prefix' => 'job','middleware' => 'isPremium'], function () {
     Route::post('/apply', [JobController::class, 'apply']);
 });
 //profile group
-Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
+Route::group(['prefix' => 'profile','middleware' => ['auth','verified']], function () {
     Route::get('/',[ProfileController::class,'index']);
     Route::get('/update', [ProfileController::class,'edit']);
     Route::patch('/update', [ProfileController::class,'update']);
@@ -73,12 +73,12 @@ Route::group(['prefix' => 'profile','middleware' => 'auth'], function () {
     Route::get('/user/{user}', [ProfileController::class, 'showUser']);
 });
 
-Route::post('/logout',[LogoutController::class,'logout']);
-Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth', \App\Http\Middleware\IsEmployee::class);
+Route::post('/logout',[LogoutController::class,'logout'])->middleware('auth');
+Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth','employee');
 Route::get('/', function () {return view('home');});
 Route::get('/home', function () {return view('home');});
 Route::get('/about', function () {return view('about');});
-Route::get('/jobs', [JobController::class,'index']);
+Route::get('/jobs', [JobController::class,'index'])->middleware('auth','verified');
 Route::get('/jobs/{job}',[JobController::class,'show']);
 Route::get('/email/verify',[EmailController::class,'sendVerification'])->middleware('auth')->name('verification.notice');
 Route::get('/resend/email/verify',[EmailController::class,'reSendVerification'])->middleware('auth');

@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('contact')
     <div class="container mt-5">
+        <x-successes.success-register/>
+        <x-warning.warning-message/>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow-lg">
