@@ -13,6 +13,7 @@
             <h1>Hi,I'm {{$user->firstName.' '.$user->lastName}}</h1>
             <p class="about">About: {{$user->about}}</p>
             <p>Email: {{$user->email}}</p>
+            <p>Resume: @if($user->resume) Uploaded @else Not Uploaded @endif</p>
             @if($isMe)
                 <p>Account Type: {{$user->user_type}}</p>
             @endif
@@ -26,7 +27,9 @@
                 <a style="margin-left: 5px" href="/profile/changePass" class="btn-hire">Change Pass</a>
             @else
                 <a style="margin-left: 5px" href="mailto:{{$user->email}}" class="btn-hire">Send Email</a>
-                <a style="margin-left: 5px;width: 220px" href="/job/applicants/resume/{{$user->resume}}" class="btn-hire">Download Resume</a>
+                @if($user->resume)
+                    <a style="margin-left: 5px;width: 220px" href="/job/applicants/resume/{{$user->resume}}" class="btn-hire">Download Resume</a>
+                @endif
             @endif
         </div>
         <div class="home-image">

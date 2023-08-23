@@ -27,7 +27,7 @@ class UpdateProfileRequest extends FormRequest
             'firstName' => 'min:5|max:24',
             'lastName'=>'min:5|max:24',
             'about' => 'min:10|max:255',
-            'profile_pic '=>'mimes:png,jpeg,jpg',
+            'profile_pic '=>'mimes:png,jpeg,jpg,pdf',
         ];
     }
 }
