@@ -24,6 +24,7 @@
         @endif
         @if(Auth::check() && Auth::user()->user_type === 'seeker')
             <a class="a" href="/jobs">Jobs</a>
+            <a class="a" href="/jobs/applied">Applied Jobs</a>
         @endif
         @if(!Auth()->check())
             <a href="/login/employee">
