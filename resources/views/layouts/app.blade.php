@@ -51,7 +51,7 @@
         <form action="/logout" id="logoutForm" method="post">@csrf</form>
     </nav>
 </header>
-<x-successes.success-register/>
+{{--<x-successes.success-register/>--}}
 <x-warning.warning-message/>
 
 @yield('contact')

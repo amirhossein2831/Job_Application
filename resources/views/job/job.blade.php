@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('contact')
     <div class="container jobs" style="padding: 20px 20px;width: 1000px">
+        <x-successes.success-register/>
         <div class="job-card" >
             <img
                 src="{{\Illuminate\Support\Facades\Storage::url($job->post_image ?? 'image/Default-Profile.png')}}"

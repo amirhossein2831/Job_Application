@@ -65,7 +65,7 @@ class JobController extends Controller
             $user = User::find(Auth::id());
             $post->applicants()->attach($user);
             Mail::to($post->user->email)->queue(new ApplyMail(Auth::user()->firstName . ' ' . Auth::user()->lastName, $post->title, now()->format("Y-m-d H:i:s")));
-            return redirect('/')->with('success', 'You applying for the jub successfully');
+            return back()->with('success', 'You applying for the jub successfully');
         }
         return redirect('/')->with('warning', 'You already applied for this jub');
     }
