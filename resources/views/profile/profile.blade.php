@@ -13,7 +13,9 @@
             <h1>Hi,I'm {{$user->firstName.' '.$user->lastName}}</h1>
             <p class="about">About: {{$user->about}}</p>
             <p>Email: {{$user->email}}</p>
-            <p>Resume: @if($user->resume) Uploaded @else Not Uploaded @endif</p>
+            @if($user->user_type === 'seeker')
+               <p>Resume: @if($user->resume) Uploaded @else Not Uploaded @endif</p>
+            @endif
             @if($isMe)
                 <p>Account Type: {{$user->user_type}}</p>
             @endif

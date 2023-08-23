@@ -24,7 +24,7 @@ class ApplicantController extends Controller
         $post = Post::find($request->input('delete'));
         $user = User::find($request->input('user'));
         $post->applicants()->detach($user);
-        return redirect('/dashboard')->with('success', 'applicant delete successfully');
+        return redirect("/job/applicants/$post->id")->with('success', 'applicant delete successfully');
     }
 
     public function shortlist(Post $post,$userId){
