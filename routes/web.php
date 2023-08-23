@@ -79,6 +79,7 @@ Route::get('/about', function () {return view('about');})->middleware('auth','ve
 Route::post('/logout',[LogoutController::class,'logout'])->middleware('auth');
 Route::get('/dashboard',[DashBoarController::class,'index'])->middleware('verified','auth','employee');
 Route::get('/jobs', [JobController::class,'index'])->middleware('auth','verified','isSeeker');
+Route::get('/jobs/applied', [JobController::class,'appliedJobs'])->middleware('auth','verified','isSeeker');
 Route::get('/jobsFrom/{company}', [JobController::class, 'jobsOfCompany'])->middleware('auth', 'verified','isSeeker');
 Route::get('/jobs/{job}',[JobController::class,'show'])->middleware('auth','verified','isSeeker');
 Route::get('/email/verify',[EmailController::class,'sendVerification'])->middleware('auth')->name('verification.notice');
