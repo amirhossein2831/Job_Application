@@ -46,9 +46,14 @@ class JobController extends Controller
         ]);
     }
 
-    public function jobsOfCompany($company)
+    public function jobsOfCompany(User $company)
     {
-        return view('employee.company-profile');
+        $posts = $company->posts()->get();
+        return view('employee.company-profile', [
+            'company'=>$company ,
+            'jobs'=>$posts
+            ]
+        );
     }
 
     /**

@@ -40,7 +40,7 @@
                     <div class="card p-1 d-flex flex-column h-100 job-card">
                         <div class="text-right"><small class="badge text-bg-info">{{$job->job_type}}</small></div>
                         <div class="text-center mt-2 p-3 h-100">
-                            <a href="jobs/{{$job->id}}" style="text-decoration: none">
+                            <a href="/jobs/{{$job->id}}" style="text-decoration: none">
                                 <div style="height: 135px">
                                     <img class="rounded-circle" src="{{\Illuminate\Support\Facades\Storage::url($job->post_image ?? 'image/Default-Profile.png')}}" width="100" height="100" alt="Not loaded"/> <br>
                                     <span class="d-block"

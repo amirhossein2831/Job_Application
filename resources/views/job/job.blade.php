@@ -11,7 +11,7 @@
 
             <div class="card-body" style="border-radius: 20px;padding: 15px 25px">
                 <h2 class="card-title">{{$job->title}}</h2>
-                <p>this job provide from <span class="badge bg-gradient">{{$job->user->company}}</span></p>
+                <p>this job provide from <a href="/jobsFrom/{{$job->user->id}}"><span class="badge bg-gradient">{{$job->user->company}}</span></a></p>
                 <h4>Info</h4>
                     <p>Job Type: <span class="badge bg-primary">{{$job->job_type}}</span></p>
                 <p>Salary: ${{$job->salary}} </p>
