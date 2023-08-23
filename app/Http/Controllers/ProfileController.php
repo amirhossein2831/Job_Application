@@ -57,9 +57,9 @@ class ProfileController extends Controller
         }
 
         if ($user->update($data)) {
-            return redirect('/')->with('success', 'the profile is updated successfully');
+            return redirect('/profile')->with('success', 'the profile is updated successfully');
         }
-        return redirect('/')->with('warning', 'something went wrong.try again');
+        return redirect('/profile')->with('warning', 'something went wrong.try again');
     }
 
     public function editPassword()
@@ -72,11 +72,10 @@ class ProfileController extends Controller
         $user = Auth::user();
         if (Hash::check($request->input('old_password'), $user->password)) {
             if ($user->update(['password' => $request->input('new_password')])) {
-                return redirect('/')->with('success', 'password change successfully');
+                return redirect('/profile')->with('success', 'password change successfully');
             }
         }
         return redirect('profile/changePass')->with('warning', 'the old password in wrong');
-
     }
 
     public function downloadResume($fileName){

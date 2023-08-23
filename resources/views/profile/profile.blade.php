@@ -8,6 +8,8 @@
     </style>
     <section class="home">
         <div class="home-content">
+            <x-successes.success-register/>
+            <x-warning.warning-message/>
             <h1>Hi,I'm {{$user->firstName.' '.$user->lastName}}</h1>
             <p class="about">About: {{$user->about}}</p>
             <p>Email: {{$user->email}}</p>

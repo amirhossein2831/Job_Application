@@ -10,7 +10,7 @@ use Auth;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\RedirectResponse as RedirectResponseAlias;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Mail;
@@ -56,7 +56,7 @@ class JobController extends Controller
 
     /**
      * @param Request $request
-     * @return Application|RedirectResponse|Redirector
+     * @return RedirectResponseAlias
      */
     public function apply(Request $request)
     {
@@ -67,6 +67,6 @@ class JobController extends Controller
             Mail::to($post->user->email)->queue(new ApplyMail(Auth::user()->firstName . ' ' . Auth::user()->lastName, $post->title, now()->format("Y-m-d H:i:s")));
             return back()->with('success', 'You applying for the jub successfully');
         }
-        return redirect('/')->with('warning', 'You already applied for this jub');
+        return back()->with('warning', 'You already applied for this jub');
     }
 }

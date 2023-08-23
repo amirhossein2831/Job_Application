@@ -2,6 +2,8 @@
 
 @section('contact')
     <div id="container" class="wrapper" style="height: auto;width: 500px">
+        <x-successes.success-register/>
+        <x-warning.warning-message/>
         <div class="form-box login">
             <h2>Change Password</h2>
             <form action="/profile/changePass" method="post">

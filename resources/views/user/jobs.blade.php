@@ -2,6 +2,7 @@
 @section('contact')
     <div class="container jobs">
         <x-successes.success-register/>
+        <x-warning.warning-message/>
         <div class="d-flex justify-content-between">
             <h4><a href="/jobs" style="color: white;text-decoration: none">Recommended Jobs</a></h4>
             <div class="dropdown">

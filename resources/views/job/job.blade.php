@@ -2,6 +2,7 @@
 @section('contact')
     <div class="container jobs" style="padding: 20px 20px;width: 1000px">
         <x-successes.success-register/>
+        <x-warning.warning-message/>
         <div class="job-card" >
             <img
                 src="{{\Illuminate\Support\Facades\Storage::url($job->post_image ?? 'image/Default-Profile.png')}}"
