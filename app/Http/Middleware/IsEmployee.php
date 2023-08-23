@@ -21,7 +21,7 @@ class IsEmployee
     {
         $user = Auth::user();
         if ($user->user_type !== 'employee') {
-            return redirect('/');
+            return redirect('/jobs');
         }
         return $next($request);
     }

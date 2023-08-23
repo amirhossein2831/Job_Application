@@ -22,7 +22,7 @@ class CanPerches
         $user = Auth::user();
         $billingEnd = $user->billing_ends;
         if ($billingEnd > now()->format('Y-m-d')) {
-            return redirect('/')->with('warning','you already perches a Box');
+            return redirect('/dashboard')->with('warning','you already perches a Box');
         }
         return $next($request);
     }

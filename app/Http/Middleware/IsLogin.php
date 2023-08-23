@@ -20,7 +20,7 @@ class IsLogin
     public function handle(Request $request, Closure $next): Response|RedirectResponse
     {
         if (Auth::check()) {
-            return redirect('/'); // Redirect authenticated users away from login
+            return redirect('/about'); // Redirect authenticated users away from login
         }
         return $next($request);
     }
