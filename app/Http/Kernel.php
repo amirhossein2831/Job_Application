@@ -8,6 +8,7 @@ use App\Http\Middleware\CanPost;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\IsEmployee;
 use App\Http\Middleware\IsLogin;
+use App\Http\Middleware\IsSeekerMiddleware;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Middleware\TrimStrings;
@@ -93,5 +94,6 @@ class Kernel extends HttpKernel
         'notLoggedIn'=>IsLogin::class,
         'isPurchased'=>CanPerches::class,
         'isPremium'=>CanPost::class,
+        'isSeeker'=>IsSeekerMiddleware::class
     ];
 }

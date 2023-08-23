@@ -52,7 +52,9 @@ class JobController extends Controller
             'job' => $job
         ]);
     }
-
+    public function jobsOfCompany($company){
+        return view('employee.company-profile');
+    }
     /**
      * @param Request $request
      * @return RedirectResponseAlias
