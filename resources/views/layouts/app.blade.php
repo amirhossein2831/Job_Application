@@ -33,14 +33,15 @@
                 <button class="brn_login">User Login</button>
             </a>
         @endif
-        @if(Auth()->check() && Auth::user()->user_type === "employee" )
-        @endif
+
         @if(Auth()->check())
             <a class="a" href="/profile">Profile</a>
             @if(Auth::user()->user_type === "employee")
                 <a class="a" href="/dashboard">Dashboard</a>
             @endif
-            <a class="a " href="/pay/subscription">subscribe</a>
+            @if(Auth()->check() && Auth::user()->user_type === "employee" )
+                <a class="a " href="/pay/subscription">subscribe</a>
+            @endif
             <a class="a" href="/about">About</a>
             <a>
                 <button class="brn_login" id="logout">Log out</button>
