@@ -139,10 +139,12 @@ this is what you should see
 
 ## Login and Register as User
 if you had already register just login but if you don't register
-<table>
+<table style="border: 0">
   <tr>
-    <td><img src="readmeImage/LoginUser.png" alt="login Page"></td>
-    <td><img src="readmeImage/RegisterUser.png" alt="register Page"></td>
+    <td><img src="readmeImage/LoginUser.png" alt="login Page" width="45%">
+    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+    <img src="readmeImage/RegisterUser.png" alt="register Page" width="45%">
+    </td>
   </tr>
  </table>
 <p align="center">
