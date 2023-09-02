@@ -120,6 +120,11 @@ you can get a free one from mail trap
 php artisan migrate
 ```
 
+## Queue work
+```bash
+php artisan queue:work
+```
+
 ## Create the Storage Link
 ```bash
 php artisan storage:link
@@ -178,7 +183,7 @@ you can edit your profile,add about,profile picture,resume,change password ...
  </table>
 
 ## List of Jobs
-you can see the all jobs with pagination,add filter base on your need and also you can see the list of the job that you applied.<br>
+you can see the all jobs with pagination,add filter base on your need and also you can see the list of the job that you applied.after applying for the job a notification email will send for the company<br>
 you can also see more detail about job by click on that and also see all the job from the company by click on the company name.
 <table>
   <tr>
