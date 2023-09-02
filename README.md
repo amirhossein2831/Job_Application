@@ -139,11 +139,10 @@ this is what you should see
 
 ## Login and Register as User
 if you had already register just login but if you don't register
-<div style="display: flex">
-<img src="readmeImage/LoginUser.png" alt="Welcome Page" width="50%">
-<img src="readmeImage/RegisterUser.png" alt="Welcome Page"  width="50%">
-</div>
-
+<p align="center">
+<img src="readmeImage/LoginUser.png" alt="login Page" width="50%">
+<img src="readmeImage/RegisterUser.png" alt="register Page"  width="50%">
+<p>
 and be careful about the validation rule
 <div style="display: flex">
 <img src="readmeImage/invalidLogin.png" alt="Welcome Page" width="50%">
