@@ -108,7 +108,7 @@ DB_PASSWORD=DBPassword
 ## Email Sender Configure
 ```php
 MAIL_MAILER=MailerType
-MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_HOST=YourHost
 MAIL_PORT=YourPort
 MAIL_USERNAME=YourUsername
 MAIL_PASSWORD=YourPassword
@@ -135,7 +135,7 @@ every thing is ready to go
 
 Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.
 this is what you should see
-<img src="storage/app/public/readmeImage/welcomePage.png" style="margin-left:40px;width30%;height: 30vh;">
+<img src="readmeImage/welcomePage.png" style="margin-left:120px;width30%;height: 30vh;">
 
 
 
