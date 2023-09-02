@@ -141,12 +141,14 @@ this is what you should see
 if you had already register just login but if you don't register
 <p float="left">
 <img src="readmeImage/LoginUser.png" alt="login Page" width="50%">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="readmeImage/RegisterUser.png" alt="register Page"  width="50%">
 <p>
 
 and be careful about the validation rule
 <p float="left">
 <img src="readmeImage/invalidLogin.png" alt="Welcome Page" width="50%">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="readmeImage/invalidRegister.png" alt="Welcome Page"  width="50%">
 <p>
 
