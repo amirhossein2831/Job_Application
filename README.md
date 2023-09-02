@@ -135,9 +135,20 @@ every thing is ready to go
 
 Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.
 this is what you should see
-<p align="center">
-  <img src="readmeImage/welcomePage.png" alt="Welcome Page" style="height: 40vh">
-</p>
+<img src="readmeImage/welcomePage.png" alt="Welcome Page">
+
+## Login and Register as User
+if you had already register just login but if you don't register
+<div style="display: flex">
+<img src="readmeImage/LoginUser.png" alt="Welcome Page" width="50%">
+<img src="readmeImage/RegisterUser.png" alt="Welcome Page"  width="50%">
+</div>
+
+and be careful about the validation rule
+<div style="display: flex">
+<img src="readmeImage/invalidLogin.png" alt="Welcome Page" width="50%">
+<img src="readmeImage/invalidRegister.png" alt="Welcome Page"  width="50%">
+</div>
 
 
 
