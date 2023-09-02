@@ -139,13 +139,12 @@ this is what you should see
 
 ## Login and Register as User
 if you had already register just login but if you don't register
-![alt-text-1](readmeImage/LoginUser.png "title-2" =50%x) ![alt-text-2](readmeImage/RegisterUser.png "title-2" =50%x)
 
-<p float="left">
+<p align="center">
 <img src="readmeImage/LoginUser.png" alt="login Page" width="50%">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
 <img src="readmeImage/RegisterUser.png" alt="register Page"  width="50%">
-<p>
+</p>
 
 and be careful about the validation rule
 <p float="left">
