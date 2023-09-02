@@ -135,7 +135,9 @@ every thing is ready to go
 
 Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.
 this is what you should see
-<img src="readmeImage/welcomePage.png" style="margin-left:200px;width30%;height: 30vh;">
+<div style="display: flex; justify-content: center">
+<img src="readmeImage/welcomePage.png" style="height: 30vh;">
+</div>
 ![Alt Text](readmeImage/welcomePage.png)
 
 
