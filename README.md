@@ -9,8 +9,10 @@ for your organization. With us, the power is in your hands!let's see what we hav
 - [For Employers](#for-employers)
 - [Join the "Find Job" Community Today](#join-the-find-job-community-today)
 - [Getting started with Find Job](#get-start)
+- [Feature](#feature)
+- [About](#about)
 
-## For Job Seekers <a name="for-job-seekers"></a>
+## :wrench: For Job Seekers <a name="for-job-seekers"></a> :wrench:
 
 Are you on the hunt for a fulfilling career opportunity? Look no further! With **Find Job**, your dream job is just a
 click away. We connect you with the best employers and provide the tools you need to land that perfect role.
@@ -32,7 +34,7 @@ click away. We connect you with the best employers and provide the tools you nee
 - Apply for jobs effortlessly through our user-friendly interface.
 - Track your applications and stay organized throughout your job search.
 
-## For Employers <a name="for-employers"></a>
+## :construction_worker: For Employers <a name="for-employers"></a> :construction_worker:
 
 Finding the perfect candidate for your team has never been easier. **Find Job** provides you with the tools and
 resources to streamline your recruitment process and build a stellar workforce.
@@ -57,7 +59,7 @@ resources to streamline your recruitment process and build a stellar workforce.
 Whether you're a job seeker or an employer, **Find Job** is your trusted partner in the world of employment. Join our
 thriving community and take the next step toward your career goals.
 
-# Getting Started with "Find Job" Laravel Project <a name="get-start"></a>
+# :tada: Getting Started with "Find Job" Laravel Project <a name="get-start"></a> :tada:
 
 Follow these steps to set up and run the "Find Job" Laravel project on your local machine.
 
@@ -159,6 +161,8 @@ this is what you should see
 
 <img src="readmeImage/welcomePage.png" alt="Welcome Page">
 
+# :rocket: Feature <a name="featur"></a> :rocket:
+
 ## Login and Register as User
 
 if you had already register just login but if you don't register
@@ -255,7 +259,9 @@ employee can download the resume of the applicant by going to the profile of the
 
 <img src="readmeImage/downloadResume.png">
 
-## Technologies Used
+# About <a name="about"></a>   
+
+## :technologist: Technologies Used :technologist:
 
 <ul>
 <li>
@@ -278,10 +284,10 @@ Back
 </li>
 </ul>
 
-## License
+## :rotating_light: License :rotating_light:
 The Find job project is licensed under the MIT License. You are free to modify and distribute the project according to the terms of the license.
 
-## Contributing
+## :globe_with_meridians: Contributing :globe_with_meridians:
 <ol>
 <li>Fork the repository.</li>
 <li>Create a new branch for your feature or bug fix.</li>
