@@ -139,16 +139,17 @@ this is what you should see
 
 ## Login and Register as User
 if you had already register just login but if you don't register
-
-| Login                               | Register                                  |
-|-------------------------------------|-------------------------------------------|
-| ![login](readmeImage/LoginUser.png) | ![register](readmeImage/RegisterUser.png) |
+<p float="left">
+<img src="readmeImage/LoginUser.png" alt="login Page" width="50%">
+<img src="readmeImage/RegisterUser.png" alt="register Page"  width="50%">
+<p>
 
 and be careful about the validation rule
+<p float="left">
+<img src="readmeImage/invalidLogin.png" alt="Welcome Page" width="50%">
+<img src="readmeImage/invalidRegister.png" alt="Welcome Page"  width="50%">
+<p>
 
-| invalid Login                          | invalid Register                             |
-|----------------------------------------|----------------------------------------------|
-| ![login](readmeImage/invalidLogin.png) | ![register](readmeImage/invalidRegister.png) |
 
 
 
