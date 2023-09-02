@@ -139,32 +139,61 @@ this is what you should see
 
 ## Login and Register as User
 if you had already register just login but if you don't register
-<table style="border: 0">
+<table>
   <tr>
-    <td><img src="readmeImage/LoginUser.png" alt="login Page" width="45%">
-    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-    <img src="readmeImage/RegisterUser.png" alt="register Page" width="45%">
-    </td>
+    <td><img src="readmeImage/LoginUser.png" alt="login Page"></td>
+    <td><img src="readmeImage/RegisterUser.png" alt="register Page"></td>
   </tr>
  </table>
-<p align="center">
-<img src="readmeImage/LoginUser.png" alt="login Page" width="50%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-<img src="readmeImage/RegisterUser.png" alt="register Page"  width="50%">
-</p>
 
 and be careful about the validation rule
-<p float="left">
-<img src="readmeImage/invalidLogin.png" alt="Welcome Page" width="50%">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="readmeImage/invalidRegister.png" alt="Welcome Page"  width="50%">
-<p>
+<table>
+  <tr>
+    <td><img src="readmeImage/invalidLogin.png" alt="Welcome Page"></td>
+    <td><img src="readmeImage/invalidRegister.png" alt="Welcome Page"></td>
+  </tr>
+ </table>
 
+## Verify your Email
+now the email verification send to your email check it and verify that is you
+after verification you redirect to the jobs pages
+<table>
+  <tr>
+    <td><img src="readmeImage/emailVarification.png" alt="Welcome Page"></td>
+    <td><img src="readmeImage/verifyEmail.png" alt="Welcome Page"></td>
+  </tr>
+ </table>
 
+## Profile
+you can edit your profile,add about,profile picture,resume,change password ...
+<table>
+  <tr>
+    <td><img src="readmeImage/profile.png" alt="Welcome Page"></td>
+    <td><img src="readmeImage/editProfile.png" alt="Welcome Page"></td>
+  </tr>
+ <tr>
+    <td><img src="readmeImage/changePass.png" alt="Welcome Page"></td>
+    <td><img src="readmeImage/invalidChangePass.png" alt="Welcome Page"></td>
+  </tr>
+ </table>
 
-
-
-
+## List of Jobs
+you can see the all jobs with pagination,add filter base on your need and also you can see the list of the job that you applied.<br>
+you can also see more detail about job by click on that and also see all the job from the company by click on the company name.
+<table>
+  <tr>
+    <td><img src="readmeImage/jobs.png" alt="Welcome Page"></td>
+    <td><img src="readmeImage/filterjobs.png" alt="Welcome Page"></td>
+  </tr>
+ <tr>
+    <td><img src="readmeImage/applying.png" alt="Welcome Page"></td>
+    <td><img src="readmeImage/appliedjob.png" alt="Welcome Page"></td>
+  </tr>
+<tr>
+    <td><img src="readmeImage/detailJobs.png" alt="Welcome Page"></td>
+    <td><img src="readmeImage/moreJobs.png" alt="Welcome Page"></td>
+  </tr>
+ </table>
 
 
 

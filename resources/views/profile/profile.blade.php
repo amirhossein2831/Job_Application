@@ -39,7 +39,7 @@
                 <span></span>
                 <span></span>
                 <div class="image">
-                    <img src="{{\Illuminate\Support\Facades\Storage::url($user->profile_pic ?? 'image/Default-Profile.png')}}" alt="">
+                    <img src="{{\Illuminate\Support\Facades\Storage::url($user->profile_pic ?? 'image/Default-Profile.png')}}" style="width: 400px" alt="">
                 </div>
             </div>
         </div>
