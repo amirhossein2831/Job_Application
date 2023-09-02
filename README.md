@@ -135,10 +135,9 @@ every thing is ready to go
 
 Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.
 this is what you should see
-<div style="display: flex; justify-content: center">
-<img src="readmeImage/welcomePage.png" style="height: 30vh;">
-</div>
-![Alt Text](readmeImage/welcomePage.png)
+<p align="center">
+  <img src="readmeImage/welcomePage.png" alt="Welcome Page" style="height: 40vh">
+</p>
 
 
 
