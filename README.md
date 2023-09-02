@@ -19,7 +19,8 @@ click away. We connect you with the best employers and provide the tools you nee
 
 - Browse thousands of job listings across various industries.
 - Customize your job search with advanced filters to find the ideal match.
-- 
+-
+
 **Showcase Your Talent:**
 
 - Create a captivating profile.
@@ -33,7 +34,8 @@ click away. We connect you with the best employers and provide the tools you nee
 
 ## For Employers <a name="for-employers"></a>
 
-Finding the perfect candidate for your team has never been easier. **Find Job** provides you with the tools and resources to streamline your recruitment process and build a stellar workforce.
+Finding the perfect candidate for your team has never been easier. **Find Job** provides you with the tools and
+resources to streamline your recruitment process and build a stellar workforce.
 
 **Efficient Recruitment Solutions:**
 
@@ -52,7 +54,8 @@ Finding the perfect candidate for your team has never been easier. **Find Job** 
 
 ## Join the "Find Job" Community Today <a name="join-the-find-job-community-today"></a>
 
-Whether you're a job seeker or an employer, **Find Job** is your trusted partner in the world of employment. Join our thriving community and take the next step toward your career goals.
+Whether you're a job seeker or an employer, **Find Job** is your trusted partner in the world of employment. Join our
+thriving community and take the next step toward your career goals.
 
 # Getting Started with "Find Job" Laravel Project <a name="get-start"></a>
 
@@ -72,30 +75,36 @@ Before you begin, ensure you have the following prerequisites installed:
 ```bash
 git clone git@github.com:amirhossein2831/Job_Application.git
 ```
+
 to make sure the link is correct copy it from the github project page
 
 ## open the project directory
+
 ```bash
 cd find-job
 ```
 
 ## Initial Composer
+
 ```bash
 composer init
 composer install
 ```
 
 ## Update the Composer
+
 ```bash
 composer update
 ```
 
 ## Configure Environment
+
 ```bash
 cp .env.example .env
 ```
 
 ## Database Configure
+
 ```php
 DB_CONNECTION=mysql
 DB_HOST=YourHost
@@ -106,6 +115,7 @@ DB_PASSWORD=DBPassword
 ```
 
 ## Email Sender Configure
+
 ```php
 MAIL_MAILER=MailerType
 MAIL_HOST=YourHost
@@ -113,24 +123,29 @@ MAIL_PORT=YourPort
 MAIL_USERNAME=YourUsername
 MAIL_PASSWORD=YourPassword
 ```
+
 you can get a free one from mail trap
 
 ## Migrate the Database
+
 ```bash
 php artisan migrate
 ```
 
 ## Queue work
+
 ```bash
 php artisan queue:work
 ```
 
 ## Create the Storage Link
+
 ```bash
 php artisan storage:link
 ```
 
 ## Start the Development Server
+
 ```bash
 php artisan serve
 ```
@@ -140,9 +155,12 @@ every thing is ready to go
 
 Visit <a href="http://localhost:8000">http://localhost:8000</a> in your web browser to access the application.
 this is what you should see
+<br><br>
+
 <img src="readmeImage/welcomePage.png" alt="Welcome Page">
 
 ## Login and Register as User
+
 if you had already register just login but if you don't register
 <table>
   <tr>
@@ -160,6 +178,7 @@ and be careful about the validation rule
  </table>
 
 ## Verify your Email
+
 now the email verification send to your email check it and verify that is you
 after verification you redirect to the jobs pages
 <table>
@@ -170,6 +189,7 @@ after verification you redirect to the jobs pages
  </table>
 
 ## Profile
+
 you can edit your profile,add about,profile picture,resume,change password ...
 <table>
   <tr>
@@ -183,8 +203,11 @@ you can edit your profile,add about,profile picture,resume,change password ...
  </table>
 
 ## List of Jobs
-you can see the all jobs with pagination,add filter base on your need and also you can see the list of the job that you applied.after applying for the job a notification email will send for the company<br>
-you can also see more detail about job by click on that and also see all the job from the company by click on the company name.
+
+you can see the all jobs with pagination,add filter base on your need and also you can see the list of the job that you
+applied.after applying for the job a notification email will send for the company<br>
+you can also see more detail about job by click on that and also see all the job from the company by click on the
+company name.
 <table>
   <tr>
     <td><img src="readmeImage/jobs.png" alt="Welcome Page"></td>
@@ -200,81 +223,68 @@ you can also see more detail about job by click on that and also see all the job
   </tr>
  </table>
 
+## Employee
 
+just go and login with the employee if you don't have account create an employee account and verify it just like user
+account.and just like user the employee has profile page can edit it and change password<br>
+as employee you have 7day trial after that you need to buy subscription don't worry you don't need to pay just select
+one the plan and let's go.
+<br>
 
+<img src="readmeImage/subscription.png">
 
+## Dashboard
 
+employees has dashboard where they can create job,update and delete it, they can see the applicants for the job and
+shortlist (in this case a notification email send to user) them or delete them.
+<table>
+<tr>
+    <td><img src="readmeImage/dashboard.png" alt="Welcome Page"></td>
+    <td><img src="readmeImage/listjobs.png" alt="Welcome Page"></td>
+  </tr>
+ <tr>
+    <td><img src="readmeImage/createjobs.png" alt="Welcome Page"></td>
+    <td><img src="readmeImage/applicants.png" alt="Welcome Page"></td>
+  </tr>
+ </table>
 
+## Download Resume
 
+employee can download the resume of the applicant by going to the profile of them and download the resume
+<br>
 
+<img src="readmeImage/downloadResume.png">
 
+## Technologies Used
 
-
-
-
-
-
-[Get Started](link-to-sign-up) | [Learn More](link-to-learn-more)
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache)
-  storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all
-modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a
-modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video
-tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging
-into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in
-becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in
-the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by
-the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell
-via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<ul>
+<li>
+Front
+    <ul>
+        <li>Html</li>
+        <li>Css</li>
+        <li>Js</li>
+        <li>Bootstrap</li>
+        <li>blade template</li>
+    </ul>
+</li>
+<li>
+Back
+    <ul>
+    <li><a href="https://laravel.com/docs/10.x">Laravel</a></li>
+    <li>MYSQL</li>
+    <li>MVC Architecture</li>
+    </ul>
+</li>
+</ul>
 
 ## License
+The Find job project is licensed under the MIT License. You are free to modify and distribute the project according to the terms of the license.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Contributing
+<ol>
+<li>Fork the repository.</li>
+<li>Create a new branch for your feature or bug fix.</li>
+<li>Make your changes and ensure that the codebase passes all tests.</li>
+<li>Submit a pull request describing your changes.</li>
+</ol>
