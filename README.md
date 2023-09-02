@@ -161,7 +161,7 @@ this is what you should see
 
 <img src="readmeImage/welcomePage.png" alt="Welcome Page">
 
-# :rocket: Feature <a name="featur"></a> :rocket:
+# :rocket: Feature <a name="feature"></a> :rocket:
 
 ## Login and Register as User
 
